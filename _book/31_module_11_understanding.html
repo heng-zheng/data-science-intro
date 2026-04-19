@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>32&nbsp; M11U: Samples and Populations – Introduction to Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./32_module_11_application.html" rel="next">
+<link href="./30_module_10_connection.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./31_module_11_understanding.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">M11U: Samples and Populations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introduction to Data Science</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_module_1_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">M1U: Course Syllabus</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_module_1_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">M1A: Install R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_module_1_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">M1C: Introduce Yourself to the Class</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_module_2_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">M2U: The New(?) and Shiny(?) Science of Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_module_2_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">M2A: Getting Started with Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_module_2_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">M2C: Set up GitHub</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_module_3_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">M3U: Research Paradigms and Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_module_3_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">M3A: Using Projects and Scripts in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_module_3_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">M3C: Writing in R Markdown</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_module_4_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">M4U: The Value of Open Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_module_4_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">M4A: Find a Dataset Relevant To You</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_module_4_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">M4C: Show Your Work</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_module_5_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">M5U: Numbers Don’t Speak for Themselves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_module_5_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">M5A: Are Ethics Enough in Data Science?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_module_5_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">M5C: Reflect on Theoretical and Philosophical Constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_module_6_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">M6U: Unicorns, Janitors, and Rock Stars</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17_module_6_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">M6A: Wrangling and Tidying Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18_module_6_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">M6C: Practice Wrangling and Tidying Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19_module_7_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">M7U: Subjectivity in Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20_module_7_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">M7A: Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_module_7_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">M7C: Practice Visualizing Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_module_8_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">M8U: Statistics and Scientific Racism</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23_module_8_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">M8A: Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24_module_8_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">M8C: Calculate Descriptive Statistics for Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./25_module_9_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">M9U: Linear Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./26_module_9_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">M9A: Basic Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./27_module_9_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">M9C: Perform a Basic Regression With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./28_module_10_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">M10U: Consequences of Failed Predictions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./29_module_10_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">M10A: Multiple Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30_module_10_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">M10C: Perform a Multiple Regression With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31_module_11_understanding.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">M11U: Samples and Populations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./32_module_11_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">M11A: Sampling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./33_module_11_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">M11C: Explore Sampling With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./34_module_12_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">M12U: Confident About What?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./35_module_12_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">M12A: Confidence Intervals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./36_module_12_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">M12C: Explore Confidence Intervals With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./37_module_13_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">M13U: The Dangers of False Positives</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./38_module_13_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">M13: Hypothesis Testing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./39_module_13_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">M13C: Explore Hypothesis Testing With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40_module_14_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">M14U: Small Stories vs.&nbsp;Big Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./41_module_14_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">M14A: Inferential Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./42_module_14_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">M14C: Perform an Inferential Regression With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./43_module_15_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">M15U: Reflect on Your Understanding of Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./44_module_15_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">M15A: Reflect on Your Application of Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./45_module_15_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">M15C: Reflect on Your Connection of Data Science</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">32.1</span> Introduction</a></li>
+  <li><a href="#samples" id="toc-samples" class="nav-link" data-scroll-target="#samples"><span class="header-section-number">32.2</span> Samples</a>
+  <ul class="collapse">
+  <li><a href="#variation-in-samples" id="toc-variation-in-samples" class="nav-link" data-scroll-target="#variation-in-samples"><span class="header-section-number">32.2.1</span> Variation in Samples</a></li>
+  <li><a href="#sample-sizes" id="toc-sample-sizes" class="nav-link" data-scroll-target="#sample-sizes"><span class="header-section-number">32.2.2</span> Sample Sizes</a></li>
+  </ul></li>
+  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability"><span class="header-section-number">32.3</span> Probability</a></li>
+  <li><a href="#expected-values-and-the-law-of-large-numbers" id="toc-expected-values-and-the-law-of-large-numbers" class="nav-link" data-scroll-target="#expected-values-and-the-law-of-large-numbers"><span class="header-section-number">32.4</span> Expected Values and the Law of Large Numbers</a></li>
+  <li><a href="#probability-and-sampling" id="toc-probability-and-sampling" class="nav-link" data-scroll-target="#probability-and-sampling"><span class="header-section-number">32.5</span> Probability and Sampling</a></li>
+  <li><a href="#probability-and-the-normal-distribution" id="toc-probability-and-the-normal-distribution" class="nav-link" data-scroll-target="#probability-and-the-normal-distribution"><span class="header-section-number">32.6</span> Probability and the Normal Distribution</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">32.7</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">M11U: Samples and Populations</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter draws on material from <a href="https://openstax.org/details/books/introductory-statistics">Introductory Statistics</a> by <a href="https://openstax.org/">OpenStax</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+<p>Changes to the source material include light editing, adding new material, deleting original material, rearranging material, and adding first-person language from current author.</p>
+<p>The resulting content is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+<section id="introduction" class="level2" data-number="32.1">
+<h2 data-number="32.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">32.1</span> Introduction</h2>
+<p>In statistics, we generally want to study a <em>population</em>. You can think of a population as a collection of persons, things, or objects under study. To study the population, we select a <em>sample</em>. The idea of sampling is to select a portion (or subset) of the larger population and study that portion (the sample) to gain information about the population. Data are the result of sampling from a population.</p>
+<p>Because it takes a lot of time and money to examine an entire population, sampling is a very practical technique. In U.S. presidential elections, for example, there are millions of potential voters, and it would be highly impractical to survey all of them. Instead, opinion poll samples of 1,000–2,000 people are taken. The opinion poll is supposed to represent the views of the people in the entire country. Likewise, manufacturers of canned carbonated drinks take samples to determine if a 16 ounce can contains 16 ounces of carbonated drink—this is a lot more effective than checking all of the cans!</p>
+<p>From the sample data, we can calculate a <em>statistic</em>. We’ve been using the word statistics in a more general sense up until now, but it’s worth paying attention to a more specific definition: Formally speaking, a <em>statistic</em> is a number that represents a property of the sample. For example, if we consider one math class to be a sample of the population of all math classes, then the average number of points earned by students in that one math class at the end of the term is an example of a statistic. The statistic is an estimate of a population <em>parameter</em>. A parameter is a numerical characteristic of the whole population that can be estimated by a statistic. Since we considered all math classes to be the population, then the average number of points earned per student over all the math classes is an example of a parameter.</p>
+<p>One of the main concerns in the field of statistics is how accurately a <em>statistic</em> estimates a <em>parameter</em>. The accuracy really depends on how well the sample represents the population. The sample must contain the characteristics of the population in order to be a representative sample. In inferential statistics, we are interested in both the sample statistic and the population parameter.</p>
+</section>
+<section id="samples" class="level2" data-number="32.2">
+<h2 data-number="32.2" class="anchored" data-anchor-id="samples"><span class="header-section-number">32.2</span> Samples</h2>
+<p>As mentioned earlier, gathering information about an entire population often costs too much—or is virtually impossible. Instead, we use a sample of the population. <em>Ideally, a sample should have the same characteristics as the population it is representing</em>.</p>
+<p>Most researchers use various methods of random sampling in an attempt to achieve this goal. There are several different methods of <em>random sampling</em>. In each form of random sampling, each member of a population initially has an equal chance of being selected for the sample. Each method has pros and cons. The easiest method to describe is called a <em>simple random sample</em>. Any group of <span class="math inline">\(n\)</span> individuals is equally likely to be chosen as any other group of <span class="math inline">\(n\)</span> individuals if the simple random sampling technique is used. In other words, each sample of the same size has an equal chance of being selected.</p>
+<p>When you analyze data, it is important to be aware of <em>sampling errors</em> and <em>nonsampling errors</em>. The actual process of sampling inherently causes sampling errors—this is the kind of error we try to minimize rather than entirely avoid. For example, if a sample is not large enough, we try to collect a larger sample—however, as we’ve already established, the whole point of sampling is because we don’t want to collect all of the available data, so there’s always going to be some kind of gap. Nonetheless, as a rule, the larger the sample, the smaller the sampling error. Factors not related to the sampling process cause nonsampling errors. A defective counting device can cause a nonsampling error. This kind of error is a bigger deal, and we need to get rid of it as much as possible</p>
+<p>In statistics, a <em>sampling bias</em> is created when a sample is collected from a population and some members of the population are not as likely to be chosen as others (remember, each member of the population should have an equally likely chance of being chosen). When a sampling bias happens, there can be incorrect conclusions drawn about the population that is being studied.</p>
+<section id="variation-in-samples" class="level3" data-number="32.2.1">
+<h3 data-number="32.2.1" class="anchored" data-anchor-id="variation-in-samples"><span class="header-section-number">32.2.1</span> Variation in Samples</h3>
+<p>Variation is present in any set of data. For example, 16-ounce cans of beverage may contain more or less than 16 ounces of liquid.</p>
+<p>Measurements of the amount of beverage in a 16-ounce can may vary because different people make the measurements or because the exact amount, 16 ounces of liquid, was not put into the cans. Manufacturers regularly run tests to determine if the amount of beverage in a 16-ounce can falls within the desired range.</p>
+<p>Be aware that as you take data, your data may vary somewhat from the data someone else is taking for the same purpose. This is completely natural. However, if two or more of you are taking the same data and get very different results, it is time for you and the others to reevaluate your data-taking methods and your accuracy.</p>
+<p>To reiterate, two or more samples from the same population, taken randomly, and having close to the same characteristics of the population will likely be different from each other. Suppose Doreen and Jung both decide to study the average amount of time students at their college sleep each night. Doreen’s sample will be different from Jung’s sample, but neither would necessarily be wrong! Can you think of what would lead these samples to be different from each other?</p>
+</section>
+<section id="sample-sizes" class="level3" data-number="32.2.2">
+<h3 data-number="32.2.2" class="anchored" data-anchor-id="sample-sizes"><span class="header-section-number">32.2.2</span> Sample Sizes</h3>
+<p>If Doreen and Jung took larger samples (i.e.&nbsp;the number of data values is increased), their sample results (the average amount of time a student sleeps) might be closer to the actual population average. But still, their samples would be, in all likelihood, different from each other. Still, the size of a sample (that is, the number of observations) is important. Samples of only a few hundred observations, or even smaller, are sufficient for many purposes. In polling, samples that are from 1,200 to 1,500 observations are considered large enough and good enough if the survey is random and is well done. However, be aware that many large samples are biased. For example, call-in surveys are invariably biased, because people choose to respond or not.</p>
+</section>
+</section>
+<section id="probability" class="level2" data-number="32.3">
+<h2 data-number="32.3" class="anchored" data-anchor-id="probability"><span class="header-section-number">32.3</span> Probability</h2>
+<p>It is often necessary to “guess” about the outcome of an event in order to make a decision. Politicians study polls to guess their likelihood of winning an election. Teachers choose a particular course of study based on what they think students can comprehend. Doctors choose the treatments needed for various diseases based on their assessment of likely results. You may have visited a casino where people play games chosen because of the belief that the likelihood of winning is good.</p>
+<p>Probability is a measure that is associated with how certain we are of outcomes of a particular experiment or activity. An <em>experiment</em> is a planned operation carried out under controlled conditions. If the result is not predetermined, then the experiment is said to be a <em>chance</em> experiment. Flipping one fair coin twice is an example of an experiment.</p>
+<p>A result of an experiment is called an <em>outcome</em>. The <em>sample space</em> of an experiment is the set of all possible outcomes. The uppercase letter <span class="math inline">\(S\)</span> is used to denote the sample space. For example, if you flip one fair coin, <span class="math inline">\(S = \{H, T\}\)</span> where <span class="math inline">\(H\)</span> = heads and <span class="math inline">\(T\)</span> = tails are the outcomes.</p>
+<p>An <em>event</em> is any combination of outcomes. Upper case letters like <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> represent events. For example, if the experiment is to flip one fair coin, event <span class="math inline">\(A\)</span> might be getting at most one head. The probability of an event <span class="math inline">\(A\)</span> is written <span class="math inline">\(P(A)\)</span>.</p>
+<p>The <em>probability</em> of any outcome is the <em>long-term relative frequency</em> of that outcome. <em>Probabilities are between zero and one, inclusive</em> (that is, zero and one and all numbers between these values). <span class="math inline">\(P(A) = 0\)</span> means the event <span class="math inline">\(A\)</span> can never happen. <span class="math inline">\(P(A) = 1\)</span> means the event <span class="math inline">\(A\)</span> always happens. <span class="math inline">\(P(A) = 0.5\)</span> means the event <span class="math inline">\(A\)</span> is equally likely to occur or not to occur. For example, if you flip one fair coin repeatedly (from 20 to 2,000 to 20,000 times) the relative frequency of heads approaches 0.5 (the probability of heads).</p>
+<p>To calculate the probability of an event <span class="math inline">\(A\)</span>, count the number of outcomes that lead to event <span class="math inline">\(A\)</span> and divide by the total number of outcomes in the sample space. For example, if you toss a fair dime and a fair nickel, the sample space is <span class="math inline">\(\{HH, TH, HT, TT\}\)</span> where <span class="math inline">\(T\)</span> = tails and <span class="math inline">\(H\)</span> = heads. The sample space has four outcomes; if we define <span class="math inline">\(A\)</span> as getting one head, there there are two outcomes that meet this condition: <span class="math inline">\(\{HT, TH\}\)</span>. So <span class="math inline">\(P(A) = 2/4 = 0.5\)</span>.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Roll2dice.svg/463px-Roll2dice.svg.png" class="img-fluid"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Roll2dice.svg">Roll2dice</a>, by <a href="https://commons.wikimedia.org/wiki/User:Niyumard">Niyumard</a>, is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0</a></p>
+<p>Let’s look at a slightly more complex example: rolling 2 six-sided dice. As seen in the image above, there are 36 different outcomes to rolling two dice. However, those outcomes are distributed in a way that some events are more likely than others. Let’s think about 11 events that are tied to getting a particular number, from two to twelve. As the image demonstrates, 6 out of those 36 outcomes add up to 7. However, only 5 out of 36 outcomes add up to either 5 or 8, and once we get out to 2 or 12, there’s only a 1 in 36 chance of getting what you want. So, there’s a much higher probability for the event of rolling a 7 than for the event of rolling a 12.</p>
+<p>However, there’s an important detail in here. If you were to roll two six-sided dice 36 times, you would not be surprised if your observed results did not match the theoretical probabilities shown above. If you were to roll two dice a very large number of times, you would expect that approximately 6/36 (1/6) of the rolls would result in an outcome of 7. You would probably not expect exactly 6/36, though. The long-term relative frequency of obtaining this result would approach the theoretical probability of 6/36 as the number of repetitions grows larger and larger.</p>
+<p>This important characteristic of probability experiments is known as the <em>Law of Large Numbers</em> which states that as the number of repetitions of an experiment is increased, the relative frequency obtained in the experiment tends to become closer and closer to the theoretical probability. Even though the outcomes do not happen according to any set pattern or order, overall, the long-term observed relative frequency will approach the theoretical probability.</p>
+</section>
+<section id="expected-values-and-the-law-of-large-numbers" class="level2" data-number="32.4">
+<h2 data-number="32.4" class="anchored" data-anchor-id="expected-values-and-the-law-of-large-numbers"><span class="header-section-number">32.4</span> Expected Values and the Law of Large Numbers</h2>
+<p>The expected value is often referred to as the <em>“long-term” average</em> or <em>mean</em>. This means that over the long term of doing an experiment over and over, you would expect this average.</p>
+<p>You toss a coin and record the result. What is the probability that the result is heads? If you flip a coin two times, does probability tell you that these flips will result in one heads and one tail? Not necessarily! You could conceivably toss a fair coin ten times and record nine heads. As I suggested earlier, probability does not describe the short-term results of an experiment. Instead, it gives information about what can be expected in the long term. To demonstrate this, Karl Pearson once tossed a fair coin 24,000 times! He recorded the results of each toss, obtaining heads 12,012 times—only twelve off from what you would expect. In his experiment, Pearson illustrated the Law of Large Numbers.</p>
+<p>Again, the Law of Large Numbers states that, as the number of trials in a probability experiment increases, the difference between the theoretical probability of an event and the relative frequency approaches zero (<em>the theoretical probability and the relative frequency get closer and closer together</em>). When evaluating the long-term results of statistical experiments, we often want to know the “average” outcome. This “long-term average” is known as the mean or expected value of the experiment. In other words, after conducting many trials of an experiment, you would expect this average value.</p>
+</section>
+<section id="probability-and-sampling" class="level2" data-number="32.5">
+<h2 data-number="32.5" class="anchored" data-anchor-id="probability-and-sampling"><span class="header-section-number">32.5</span> Probability and Sampling</h2>
+<p>In most ways, sampling from a population is not like flipping a coin, but there are some core concepts that overlap in a way that’s helpful in data science:</p>
+<p>First, like flipping a coin, an observation of a variable in a sample has the potential to take on a range of different values. For a coin, this is pretty straightforward: heads or tails. For an observation, it depends on what you’re measuring. The possible range for the beats per minute when measuring the tempo of a Spotify song is going to be different than possible range for the beats per minute when measuring the a patient’s resting heartrate in a doctor’s office. In all cases, though, there’s a range of possible values that a given observation might take on for that variable.</p>
+<p>Second, like flipping a coin, we expect that different observations are going to take on different values for that variable. Unless you have a trick coin, you aren’t going to get heads every single time. Likewise, not every patient at a doctor’s office is going to have the same resting heartrate. In my family, we tend to have abnormally low resting heartrates, and even though my Apple Watch gets really concerned about this, my physician isn’t worried.</p>
+<p>Third, the Law of Large Numbers applies equally well to both. The more that we flip a coin, the closer the relative frequency of getting a heads gets to .5—the theoretical probability of that event. Likewise, the more times we measure patients’ resting heartrate, the closer the average resting heartrate in our sample is going to be to the average resting heartrate across all of humanity.</p>
+<p>In that last comparison, you might feel like the comparison doesn’t line up as well as the two previous comparisons. It’s easy to puzzle out the “theoretical probability” for flipping a coin and to compare it to a relative frequency, but what’s the “theoretical probability” for a resting heartrate? Or any other variable, for that matter? We’ll tackle that in the next section!</p>
+</section>
+<section id="probability-and-the-normal-distribution" class="level2" data-number="32.6">
+<h2 data-number="32.6" class="anchored" data-anchor-id="probability-and-the-normal-distribution"><span class="header-section-number">32.6</span> Probability and the Normal Distribution</h2>
+<p>With examples like coins and dice, it’s quite easy to puzzle out the theoretical probability for given outcomes and events and work the math out from there. However, other variables are a lot trickier—there’s nothing in our DNA that indicates the probability of a patient’s resting heartrate being a particular number, and there’s nothing in the physics of sound that tells us what the probability of a song on Spotify having a particular tempo is. So, we need some way of figuring out what that probability is on our own.</p>
+<p>Let’s look back at our example of rolling 2 six-sided dice. Even if we weren’t mathematically sophisticated enough to figure out the probability of a particular result based on “how dice work,” there’s another way that we could estimate the probability of rolling any given number: rolling 2 dice a heck of a bunch of times and recording our results. Remember the Law of Large Numbers? That tells us that the more we observe (sample) something, the more our pattern of observations resembles the theoretical probabilities associated with a phenomenon. So, if we rolled 2 dice hundreds of times, we’d start to realize that rolls cluster around 7 and get less likely as we get closer to either end of the possible range of rolls. That would be enough data for us to start to make assumptions about the probability of any given result, and those assumptions would be pretty darn close to what the raw mathematics would have told us in the first place.</p>
+<p>What’s stopping us from doing the same thing with resting heartrates? Or tempos of songs on Spotify? Well, nothing really! In fact, that’s what researchers do all the time to establish the range of possible outcomes and the probability of getting a possible outcome within that range. (Truth be told, there’s a bit more statistical theory at the heart of this that I’m skipping over, but we’re skipping straight to the practical stuff with a warning that if you go further with data science, it’s important to better understand the theory that we’re skipping over.)</p>
+<p>In fact, there’s a pretty good chance that if you observed (that is, sampled) a particular variable enough times, you’d end up with a pattern that’s pretty similar to what we see for dice rolls. There would be a peak right around the mean, with a gradual descent on either side. This is often called a bell curve, but we’re going to refer to it differently—as a normal distribution.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/400px-Standard_deviation_diagram.svg.png" class="img-fluid"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Standard_deviation_diagram.svg">Standard deviation diagram</a>, by <a href="https://commons.wikimedia.org/wiki/User:Mwtoews">M. W. Toews</a>, is licensed under <a href="https://creativecommons.org/licenses/by/2.5/deed.en">CC BY 2.5</a></p>
+<p>A normal distribution looks like the image above. It peaks at the mean—that is, the mean value of the variable is the outcome that we’d expect to see most often. Then, like our dice, the probability of outcomes gets lower and lower as we get further and further away from the mean. Keep in mind that the actual value of the mean doesn’t matter—we would expect the mean of different variables to be different! A normal distribution is less about the exact numbers and more about the patterns associated with those numbers.</p>
+<p>In fact, that’s also nicely demonstrated with some of the other things that appear in that image. In a normal distribution, there is a specific pattern for <em>how</em> probabilities decrease as outcomes get further away from the mean. The <span class="math inline">\(σ\)</span> symbol above is the a lower-case Greek letter sigma, and in statistics it refers to the standard deviation—a concept that we covered a few weeks ago and that is worth reviewing if it’s feeling fuzzy!</p>
+<p>In short, 68.2% of the observations of a variable following the patterns of a normal distribution will fall within one standard deviation of the mean. That is if you subtract the standard deviation for a variable from the mean for that variable, 34.1% of your observations ought to be <em>higher than that number</em> but <em>lower than the mean</em>. Then, if you add the standard deviation for a variable to the mean for that variable, an additional 34.1% of your observations ought to be <em>lower than that number</em> but <em>higher than the mean</em>. In turn, all of this means that there is a 68.2% probability that an observation will fall between the numbers that you’ve just calculated.</p>
+<p>If you go out 2 standard deviations from the mean, your chances get even higher that an observation falls within that range. You can see from the image that it’s an additional 13.6% in each direction. Multiply that by two and add it to the 68.2% from above, and you’ll get about 95%. There’s a 95% probability that an observation falls within that range.</p>
+<p>The normal distribution is important to understand because so much of statistics relies on these concepts. In fact, it’s customary for data scientists—and researchers of all kinds—to assume that a variable is normally distributed when we’re working with it. However, it’s also important to understand that as common as a normal distribution is for all kinds of variables, it’s not always how variables work. Just like we glossed over some theory earlier, we’re largely going to gloss over the importance of testing variables for normal distributions and alternate approaches to statistical analyses when the assumption of a normal distribution doesn’t hold up. That doesn’t mean these things aren’t important—they’re incredibly important! It’s just another thing that we don’t have time to cover because data science involves so dang much. Once again, if you continue down a data science path, it’s very important to dig deeper into what I’m glossing over here.</p>
+</section>
+<section id="conclusion" class="level2" data-number="32.7">
+<h2 data-number="32.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">32.7</span> Conclusion</h2>
+<p>A lot of this reading is dedicated to setting the groundwork for future concepts, so if it’s not obvious how things fit together right now, that’s okay! What you ought to take away from this reading for now is: 1) that data scientists nearly always work with samples instead of populations, 2) that larger, representative samples better approximate populations than smaller, non-representative samples, and 3) with a larger sample (one with more observations), we can get a pretty good feel for what the probability of a given result is.</p>
+<p>Furthermore, like some other recent readings, our walkthrough for this week is going to cover sampling again, though not necessarily all of the details that we’ve covered here. This is less about being redundant as it is about covering an important concept multiple times from multiple angles.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./30_module_10_connection.html" class="pagination-link" aria-label="M10C: Perform a Multiple Regression With Your Own Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">M10C: Perform a Multiple Regression With Your Own Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./32_module_11_application.html" class="pagination-link" aria-label="M11A: Sampling">
+        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">M11A: Sampling</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

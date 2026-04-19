@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; M2U: The New(?) and Shiny(?) Science of Data – Introduction to Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05_module_2_application.html" rel="next">
+<link href="./03_module_1_connection.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_module_2_understanding.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">M2U: The New(?) and Shiny(?) Science of Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introduction to Data Science</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_module_1_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">M1U: Course Syllabus</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_module_1_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">M1A: Install R and RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_module_1_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">M1C: Introduce Yourself to the Class</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_module_2_understanding.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">M2U: The New(?) and Shiny(?) Science of Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_module_2_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">M2A: Getting Started with Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_module_2_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">M2C: Set up GitHub</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_module_3_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">M3U: Research Paradigms and Reproducibility</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_module_3_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">M3A: Using Projects and Scripts in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_module_3_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">M3C: Writing in R Markdown</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_module_4_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">M4U: The Value of Open Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_module_4_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">M4A: Find a Dataset Relevant To You</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_module_4_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">M4C: Show Your Work</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_module_5_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">M5U: Numbers Don’t Speak for Themselves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_module_5_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">M5A: Are Ethics Enough in Data Science?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_module_5_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">M5C: Reflect on Theoretical and Philosophical Constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_module_6_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">M6U: Unicorns, Janitors, and Rock Stars</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17_module_6_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">M6A: Wrangling and Tidying Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18_module_6_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">M6C: Practice Wrangling and Tidying Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19_module_7_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">M7U: Subjectivity in Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20_module_7_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">M7A: Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_module_7_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">M7C: Practice Visualizing Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_module_8_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">M8U: Statistics and Scientific Racism</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23_module_8_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">M8A: Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24_module_8_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">M8C: Calculate Descriptive Statistics for Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./25_module_9_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">M9U: Linear Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./26_module_9_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">M9A: Basic Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./27_module_9_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">M9C: Perform a Basic Regression With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./28_module_10_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">M10U: Consequences of Failed Predictions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./29_module_10_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">M10A: Multiple Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30_module_10_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">M10C: Perform a Multiple Regression With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31_module_11_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">M11U: Samples and Populations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./32_module_11_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">M11A: Sampling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./33_module_11_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">M11C: Explore Sampling With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./34_module_12_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">M12U: Confident About What?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./35_module_12_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">M12A: Confidence Intervals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./36_module_12_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">M12C: Explore Confidence Intervals With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./37_module_13_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">M13U: The Dangers of False Positives</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./38_module_13_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">M13: Hypothesis Testing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./39_module_13_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">M13C: Explore Hypothesis Testing With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40_module_14_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">M14U: Small Stories vs.&nbsp;Big Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./41_module_14_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">M14A: Inferential Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./42_module_14_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">M14C: Perform an Inferential Regression With Your Own Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./43_module_15_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">M15U: Reflect on Your Understanding of Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./44_module_15_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">M15A: Reflect on Your Application of Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./45_module_15_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">M15C: Reflect on Your Connection of Data Science</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-data-science-and-big-data" id="toc-data-data-science-and-big-data" class="nav-link active" data-scroll-target="#data-data-science-and-big-data"><span class="header-section-number">5.1</span> Data, Data Science, and Big Data</a>
+  <ul class="collapse">
+  <li><a href="#what-are-data" id="toc-what-are-data" class="nav-link" data-scroll-target="#what-are-data"><span class="header-section-number">5.1.1</span> What Are Data?</a></li>
+  <li><a href="#what-is-data-science" id="toc-what-is-data-science" class="nav-link" data-scroll-target="#what-is-data-science"><span class="header-section-number">5.1.2</span> What Is Data Science?</a></li>
+  <li><a href="#what-does-big-data-mean" id="toc-what-does-big-data-mean" class="nav-link" data-scroll-target="#what-does-big-data-mean"><span class="header-section-number">5.1.3</span> What Does “Big Data” Mean?</a></li>
+  </ul></li>
+  <li><a href="#the-many-skills-of-data-science" id="toc-the-many-skills-of-data-science" class="nav-link" data-scroll-target="#the-many-skills-of-data-science"><span class="header-section-number">5.2</span> The Many Skills of Data Science</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5.3</span> Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.4</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">M2U: The New(?) and Shiny(?) Science of Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter draws on material from:</p>
+<ul>
+<li><a href="https://data-feminism.mitpress.mit.edu/pub/frfa9szd/release/6">Introduction: Why Data Science Needs Feminism</a> by <a href="http://www.kanarinka.com/">Catherine D’Ignazio</a> and <a href="https://lklein.com/">Lauren Klein</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+<li><a href="https://data-feminism.mitpress.mit.edu/pub/vi8obxh7/release/4">1: The Power Chapter</a> by <a href="http://www.kanarinka.com/">Catherine D’Ignazio</a> and <a href="https://lklein.com/">Lauren Klein</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+<li><a href="https://surface.syr.edu/istpub/165/">Version 3: An Introduction to Data Science</a> by Jeffrey Stanton, licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a></li>
+</ul>
+<p>Changes to the source material include adding new material; editing, reformatting, and rearranging of original material; adding links; adding or replacing images; changing the citation style; changing original authors’ voice to third person; and adding first-person language from current author.</p>
+<p>The resulting content is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>.</p>
+<section id="data-data-science-and-big-data" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="data-data-science-and-big-data"><span class="header-section-number">5.1</span> Data, Data Science, and Big Data</h2>
+<p><em>Data science</em> refers to an emerging area of work concerned with the collection, preparation, analysis, visualization, management, and preservation of large collections of information, sometimes referred to as <em>big data</em>.</p>
+<section id="what-are-data" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="what-are-data"><span class="header-section-number">5.1.1</span> What Are Data?</h3>
+<p>To introduce <em>data science</em>, it makes sense that we ought to talk about <em>data</em> first. The word <em>data</em> is the plural of the the Latin word <em>datum</em>. One quick word before we continue: Because the word <em>data</em> is the plural of <em>datum</em>, I (and many people) prefer data as a plural noun—hence “What Are Data?” for the section title. (In fact, I think it’s funny to define data science as “the science of datums,” but that’s a terrible joke and I promise I won’t do it again in this book). However, it’s quite common in American English to treat data as a singular word—so common in fact, that you might notice me trip up and write “What is Data?” at some point. My opinion here is strong enough that I won’t mind if you point out when I’m inconsistent but not so strong that I’m going to get picky about how you treat the word—go with whatever comes more naturally to you.</p>
+<p>Even though we rarely use the singular <em>datum</em>, it’s worth briefly exploring its etymology. The word means “a given”—that is, something taken for granted. That’s important: The word <em>data</em> was introduced in the mid-seventeenth century to supplement existing terms such as evidence and fact. Identifying information as <em>data</em>, rather than as either of those other two terms, served a rhetorical purpose (Poovey, 1998; Posner &amp; Klein, 2017; Rosenberg, 2013). It converted otherwise debatable information into the solid basis for subsequent claims.</p>
+<p>Modern usage of the word <em>data</em> started in the 1940s and 1950s as practical electronic computers began to input, process, and output data. When computers work with data, all of that data has to be broken down to individual <em>bits</em> as the “atoms” that make up data. A bit is a binary unit of data, meaning that it is only capable of representing one of two values: <code>0</code> and <code>1</code>. That doesn’t carry a lot of information by itself (at best, “yes” vs.&nbsp;“no” or <code>TRUE</code> vs.&nbsp;<code>FALSE</code>). However, by combining bits, we can increase the amount of information that we transmit. For example, even a combination of just two bits can express four different values: <code>00</code>, <code>01</code>, <code>10</code> and <code>11</code>. Every time you add a new bit you double the number of possible messages you can send. So three bits would give eight options and four bits would give 16 options.</p>
+<p>When we get up to eight bits—which provides 256 different combinations—we finally have something of a reasonably useful size to work with. Eight bits is commonly referred to as a <em>byte</em>—this term probably started out as a play on words with the word <em>bit</em> (and four bits is sometimes referred to as a <em>nibble</em> or a <em>nybble</em>, because nerds like jokes). A byte offers enough different combinations to encode all of the letters of the (English) alphabet, including capital and small letters. There is an old rulebook called ASCII—the American Standard Code for Information Interchange—which matches up patterns of eight bits with the letters of the alphabet, punctuation, and a few other odds and ends. For example the bit pattern <code>0100 0001</code> represents the capital letter <code>A</code> and the next higher pattern <code>0100 0010</code> represents capital <code>B</code>.</p>
+<p>This is more background than anything else—most of the time (but not all of the time!) you don’t need to know the details of what’s going on here to carry out data science. However, it is important to have a foundational understanding that when we’re working with data in this class, the computer is ultimately dealing with everything as bits and translating combinations of bits into words, pictures, numbers, and other formats that makes sense for humans. This background is also helpful for pointing out that just like the word <em>data</em> has connotations related to trustworthiness, it also has connotations of things that are digital and quantitative.</p>
+<p>While all of these connotations are reasonable, it’s important that we understand their limits. For example, while many people think of <em>data</em> as numbers alone, data can also consist of words or stories, colors or sounds, or any type of information that is systematically collected, organized, and analyzed. Some folks might resist that broad definition of data because “words or stories” told by a person don’t feel as trustworthy or objective as numbers stored in a computer.</p>
+<p>However, one of the recurring themes of this course is to emphasize that data and data systems are not objective—even when they’re digital and quantitative. When I was introducing ASCII a few paragraphs ago, there were two details in there that might have passed you by but that actually have pretty important consequences. First, I noted that ASCII can “encode all the letters of the (English) alphabet”; second, I mentioned that the “A” in ASCII stood for “American.” Early computer systems in the United States were built around American English assumptions for what counts as a letter. This makes sense… but it has had consequences!</p>
+<p>While most modern computer systems have moved on to more advanced character encoding systems (ones that include Latin letters, Chinese characters, Arabic script, and emoji, for example), there are still some really important computer systems that use limited encoding schemes like ASCII. In 2015, Tovin Lapin wrote a newspaper article about this, noting that:</p>
+<blockquote class="blockquote">
+<p>Every year in California thousands of parents choose names such as José, André, and Sofía for their children, often honoring the memory of a deceased grandmother, aunt or sibling. On the state-issued birth certificates, though, those names will be spelled incorrectly.</p>
+<p>California, like several other states, prohibits the use of diacritical marks or accents on official documents. That means no tilde (~), no accent grave (`), no umlaut (¨) and certainly no cedilla (¸).</p>
+<p>Although more than a third of the state population is Hispanic, and accents are used in the names of state parks and landmarks, the state bars their use on birth records.</p>
+</blockquote>
+<p>There were attempts in 2014 to change this, but when lawmakers realized it would cost $10 million to update computer systems, things stalled. Moral of the story: even though ASCII is a straightforward technical system built on digital data with no real wiggle room for what means what, it’s <em>still</em> subjective and biased. How we organize data and data systems matters!</p>
+<p>So, even digital and quantitative data (systems) can be biased, which means that we ought to push lightly back against the rhetorical connotations of data as trustworthy. I’m not suggesting we throw data, science, and data science out the window and go with our gut and our opinions, but we shouldn’t take for granted that a given dataset doesn’t have its own subjectivity. Likewise, we ought to ask ourselves what information needs to become data before it can be trusted—or, more precisely, <em>whose</em> information needs to become data before it can be considered as fact and acted upon (Lanius, 2015; Porter, 1996).</p>
+</section>
+<section id="what-is-data-science" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="what-is-data-science"><span class="header-section-number">5.1.2</span> What Is Data Science?</h3>
+<p>If you think about it, <em>data science</em> is somewhat of an unintuitive name. As we noted earlier, <em>data</em> are more than numbers: they can be any type of information that is systematically collected, organized, and analyzed. Likewise, <em>science</em> simply implies a commitment to systematic methods of observation and experiment.</p>
+<p>Given these definitions, <em>data science</em> clearly means something more limited than <em>science</em> that uses <em>data</em>. History, for example, is a commitment to systematic methods of observation and relies on information that is systematically collected, organized, and analyzed, but we (generally) shouldn’t expect a historian to describe themselves (or be accepted) as a data scientist. Also relevant here is a critique by data and statistics expert Nate Silver, who once quipped that:</p>
+<blockquote class="blockquote">
+<p>I think data-scientist is a sexed up term for a statistician (Stats &amp; Data Science Views, 2013)</p>
+</blockquote>
+<p>There’s a certain amount of hype, prestige, and even sexiness associated with the term data science, and this ought to encourage us to be critical about how the term is used. Is data science just statistics gussied up to sound cooler? If all scientists use data, who is allowed to have access to the hype, prestige, and sexiness associated with data science?</p>
+<p>It is also important to acknowledge the elephant in the server room: the demographics of data science (and related occupations like software engineering and artificial intelligence research) do not represent the population as a whole. According to 2018 data from the US Bureau of Labor Statistics, released in 2018, only 26 percent of those in “computer and mathematical occupations” are women (US Bureau of Labor Statistics, 2019). Across all of those women, only 12 percent are Black or Latinx women, even though Black and Latinx women make up 22.5 percent of the US population. (Women of Color in Computing Collaborative, 2018). A report by the research group AI Now about the diversity crisis in artificial intelligence notes that women comprise only 15 percent of AI research staff at Facebook and 10 percent at Google (Myers, Whittaker, &amp; Crawford, 2019).</p>
+<p>These numbers are probably not a surprise. The more surprising thing is that those numbers are getting worse, not better. According to a research report published by the American Association of University Women in 2015, women computer science graduates in the United States peaked in the mid-1980s at 37 percent, and we have seen a steady decline in the years since then to 26 percent today (Corbett &amp; Hill, 2015). As “data analysts” (low-status number crunchers) have become rebranded as “data scientists” (high status researchers), women are being pushed out in order to make room for more highly valued and more highly compensated men (Fouad, 2014).</p>
+<p>Disparities in the higher education pipeline aren’t only along gender lines. The same report noted specific underrepresentation for Native American women, multiracial women, White women, and all Black and Latinx people. So is it really a surprise that each day brings a new example of data science being used to disempower and oppress minoritized groups? In 2018, it was revealed that Amazon had been developing an algorithm to screen its first-round job applicants. But because the model had been trained on the resumes of prior applicants, who were predominantly male, it developed an even stronger preference for male applicants. It downgraded resumes with the word women and graduates of women’s colleges. Ultimately, Amazon had to cancel the project (Gershgorn, 2018; Kraus, 2018).</p>
+<p>This example reinforces the work of Safiya Umoja Noble (2018), whose book, <em>Algorithms of Oppression</em>, has shown how both gender and racial biases are encoded into some of the most pervasive data-driven systems—including Google search, which boasts over five billion unique web searches per day. Noble describes how, as recently as 2016, comparable searches for “three Black teenagers” and “three White teenagers” turned up wildly different representations of those teens. The former returned mugshots, while the latter returned wholesome stock photography. Unequal representation among data scientists is all the worse for the way it can lead to biases in data science projects.</p>
+</section>
+<section id="what-does-big-data-mean" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="what-does-big-data-mean"><span class="header-section-number">5.1.3</span> What Does “Big Data” Mean?</h3>
+<p>One possible distinction between data science and statistics is the amount of data we’re working with. Technology coverage in the 2010s (and continuing to the present) made it hard to resist the idea that <em>big data</em> represents some kind of revolution that has turned the whole world of information and technology topsy-turvy. But is this really true? Does big data change everything?</p>
+<p>Business analyst Doug Laney suggested that three characteristics make big data different from what came before: volume, velocity, and variety. <em>Volume</em> refers to the sheer amount of data. <em>Velocity</em> focuses on how quickly data arrives as well as how quickly those data become “stale.” Finally, <em>variety</em> reflects the fact that there may be many different kinds of data. Together, these three characteristics are often referred to as the “three Vs” model of big data.</p>
+<p>Note, however, that even before the dawn of the computer age we’ve had a variety of data, some of which arrives quite quickly, and that can add up to quite a lot of total storage over time. Think, for example, of the large variety and volume of data that has arrived annually at the Library of Congress since the 1800s! So, it is difficult to tell that big data is fundamentally a brand new thing.</p>
+<p>Furthermore, there are some concerns that we should exercise when it comes to big data. For example, when a data set gets to a certain size (into the range of thousands of rows), conventional tests of statistical significance are meaningless, because even the most tiny and trivial results are statistically significant. We’ll talk more about statistical significance later in the semester; for the time being, though, it suffices to say that statistical significance is how researchers have traditionally determined whether their results are important or not. If big data makes statistical significance more likely, then researchers who have access to more data will get more important results, whether or not that’s actually true in practical terms! Besides that, the quality and suitability of the data matters a lot: More data does not always mean better data.</p>
+</section>
+</section>
+<section id="the-many-skills-of-data-science" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="the-many-skills-of-data-science"><span class="header-section-number">5.2</span> The Many Skills of Data Science</h2>
+<p>Data science owes a lot to statistics and mathematics, so you’d be forgiven for thinking of a data scientist as a statistician in a white lab coat staring fixedly at blinking computer screens filled with scrolling numbers. This isn’t quite the case, though: There is much to be accomplished in the world of data science for those of us who are more comfortable working with words, lists, photographs, sounds, and other kinds of information.</p>
+<p>In addition, data science is much more than simply analyzing data. There are many people who enjoy analyzing data and who could happily spend all day looking at histograms and averages, but for those who prefer other activities, data science offers a range of roles and requires a range of skills. Here are some skills that are particularly useful:</p>
+<ul>
+<li><strong>Learning the application domain</strong>: A data scientist must quickly learn how the data will be used in a particular context.</li>
+<li><strong>Communicating with data users</strong>: A data scientist must possess strong skills for learning the needs and preferences of users. Translating back and forth between the technical terms of computing and statistics and the vocabulary of the application domain is a critical skill.</li>
+<li><strong>Seeing the big picture of a complex system</strong>: After developing an understanding of the application domain, a data scientist must imagine how data will move around among all of the relevant systems and people.</li>
+<li><strong>Knowing how data can be organized</strong>: A data scientist must have a clear understanding about how data can be stored and linked, as well as about “metadata” (data that describes how other data are arranged).</li>
+<li><strong>Data transformation and analysis</strong>: When data become available for the use of decision makers, a data scientist must know how to transform, summarize, and make inferences from the data. As noted above, being able to communicate the results of analyses to users is also a critical skill here.</li>
+<li><strong>Visualization and presentation</strong>: Although numbers often have the edge in precision and detail, a good data display (e.g., a bar chart) can often be a more effective means of communicating re- sults to data users.</li>
+<li><strong>Attention to quality</strong>: No matter how good a set of data may be, there is no such thing as perfect data. A data scientist must know the limitations of the data they work with, know how to quantify its accuracy, and be able to make suggestions for improving the quality of the data in the future.</li>
+<li><strong>Ethical reasoning</strong>: If data are important enough to collect, they are often important enough to affect people’s lives. A data scientist must understand important ethical issues such as privacy and must be able to communicate the limitations of data to try to prevent misuse of data or analytical results.</li>
+</ul>
+<p>While a keen understanding of numbers and mathematics is important, particularly for data analysis, a data scientist also needs to have excellent communication skills, be a great systems thinker, have a good eye for visual displays, and be highly capable of thinking critically about how data will be used to make decisions and affect people’s lives. Of course there are very few people who are good at all of these things, so some of the people interested in data will specialize in one area, while others will become experts in another area. Of course, this also highlights the importance of teamwork.</p>
+</section>
+<section id="conclusion" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.3</span> Conclusion</h2>
+<p>We can’t possibly cover all these skills in depth this semester, and even these skills are just the tip of the iceberg, which just emphasizes what a wide range is represented here. I hope their importance is clear, though—for example, which of these skills could have anticipated and responded to the problems involved with María showing up as Maria on a California birth certificate?</p>
+</section>
+<section id="references" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="references"><span class="header-section-number">5.4</span> References</h2>
+<p>Corbett, C., &amp; Hill, C. (2015). <em>Solving the equation: The variables for women’s success in engineering and computing</em>. American Association of University Women.</p>
+<p>Fouad, N. A. (2014, August). <em>Learning in, but getting pushed back (and out)</em>. Paper presented at the American Psychological Association. https://www.apa.org/news/press/releases/2014/08/pushed-back.pdf</p>
+<p>Gershgorn, D. (2018, October 22). Companies are on the hook if their hiring algorithms are biased. <em>Quartz</em>. https://qz.com/1427621/companies-are-on-the-hook-if-their-hiring-algorithms-are-biased</p>
+<p>Kraus, R. (2018, October 10). Amazon used AI to promote diversity. Too bad it’s plagued with gender bias. <em>Mashable</em>. https://mashable.com/article/amazon-sexist-recruiting-algorithm-gender-bias-ai#VSsbMcGmvqqa</p>
+<p>Lanius, C. (2015, January 12). Fact check: Your demand for statistical proof is racist. <em>Cyborgology</em>. https://thesocietypages.org/cyborgology/2015/01/12/fact-check-your-demand-for-statistical-proof-is-racist/</p>
+<p>Lapan, T. (2015, April 11). California birth certificates and accents: O’Connor alright, Ramón and José is not. <em>The Guardian</em>. https://www.theguardian.com/us-news/2015/apr/11/california-birth-certifcates-accents-marks</p>
+<p>Myers, S. W., Whittaker, M., &amp; Carwford, K. (2019). <em>Discriminating systems: Gender, race and power in AI</em>. AI Now Institute. https://ainowinstitute.org/publication/discriminating-systems-gender-race-and-power-in-ai-2</p>
+<p>Noble, S. U. (2018). <em>Algorithms of oppression: How search engines reinforce racism</em>. NYU Press.</p>
+<p>Poovey, M. (1998). <em>A history of the modern fact: Problems of knowledge in the sciences of wealth and society</em>. University of Chicago Press.</p>
+<p>Porter, T. M. (1996). <em>Trust in numbers: The pursuit of objectivity in science and public life</em>. Princeton University Press.</p>
+<p>Posner, M., &amp; Klein, L. F. (2017). Editor’s introduction: Data as media. <em>Feminist Media Histories</em>, <em>3</em>(3), 1-8.</p>
+<p>Rosenberg, D. (2013). <em>Data before the fact</em>. In L. Gitelman (Ed.), “Raw” data is an oxymoron. MIT Press.</p>
+<p>Stats &amp; Data Science Views. (2013, August 23). <em>Nate Silver: What I need from statisticians</em> [blog post]. https://www.statisticsviews.com/article/nate-silver-what-i-need-from-statisticians/</p>
+<p>US Bureau of Labor Statistics (2019). BLS Data Viewer. https://beta.bls.gov/dataViewer/view/timeseries/LNU02070002Q</p>
+<p>Women of Color in Computing Collaborative. (2018). <em>Data brief: Women and girls of color in computing</em>. https://www.wocincomputing.org/wp-content/uploads/2018/08/WOCinComputingDataBrief.pdf</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03_module_1_connection.html" class="pagination-link" aria-label="M1C: Introduce Yourself to the Class">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">M1C: Introduce Yourself to the Class</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05_module_2_application.html" class="pagination-link" aria-label="M2A: Getting Started with Data in R">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">M2A: Getting Started with Data in R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

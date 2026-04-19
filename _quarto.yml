@@ -1,0 +1,63 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Introduction to Data Science"
+  subtitle: "A Remixed Textbook for ICT/LIS 661 at the University of Kentucky [Fall 2025 Edition]"
+  author: "Spencer P. Greenhalgh, PhD"
+  chapters:
+    - index.qmd
+    - 01_module_1_understanding.qmd
+    - 02_module_1_application.qmd
+    - 03_module_1_connection.qmd
+    - 04_module_2_understanding.qmd
+    - 05_module_2_application.qmd
+    - 06_module_2_connection.qmd
+    - 07_module_3_understanding.qmd
+    - 08_module_3_application.qmd
+    - 09_module_3_connection.qmd
+    - 10_module_4_understanding.qmd
+    - 11_module_4_application.qmd
+    - 12_module_4_connection.qmd
+    - 13_module_5_understanding.qmd
+    - 14_module_5_application.qmd
+    - 15_module_5_connection.qmd
+    - 16_module_6_understanding.qmd
+    - 17_module_6_application.qmd
+    - 18_module_6_connection.qmd
+    - 19_module_7_understanding.qmd
+    - 20_module_7_application.qmd
+    - 21_module_7_connection.qmd
+    - 22_module_8_understanding.qmd
+    - 23_module_8_application.qmd
+    - 24_module_8_connection.qmd
+    - 25_module_9_understanding.qmd
+    - 26_module_9_application.qmd
+    - 27_module_9_connection.qmd
+    - 28_module_10_understanding.qmd
+    - 29_module_10_application.qmd
+    - 30_module_10_connection.qmd
+    - 31_module_11_understanding.qmd
+    - 32_module_11_application.qmd
+    - 33_module_11_connection.qmd
+    - 34_module_12_understanding.qmd
+    - 35_module_12_application.qmd
+    - 36_module_12_connection.qmd
+    - 37_module_13_understanding.qmd
+    - 38_module_13_application.qmd
+    - 39_module_13_connection.qmd
+    - 40_module_14_understanding.qmd
+    - 41_module_14_application.qmd
+    - 42_module_14_connection.qmd
+    - 43_module_15_understanding.qmd
+    - 44_module_15_application.qmd
+    - 45_module_15_connection.qmd
+
+format:
+  html:
+    theme: cosmo
+    # include-after-body: hypothesis.html
+
+execute:
+  warning: false
