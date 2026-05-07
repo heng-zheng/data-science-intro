@@ -5,7 +5,7 @@ project:
 book:
   title: "Introduction to Data Science"
   subtitle: "A Remixed Textbook for ICT/LIS 661 at the University of Kentucky [Fall 2025 Edition]"
-  author: "Spencer P. Greenhalgh, PhD"
+  author: "Heng Zheng, PhD"
   chapters:
     - index.qmd
     - 01_module_1_understanding.qmd

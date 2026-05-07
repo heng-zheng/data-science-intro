@@ -1,7 +1,8 @@
 ---
 title: "Introduction to Data Science"
 subtitle: "A Remixed Textbook for LIS/ICT 661 at the University of Kentucky"
-author: "Instructor: Heng Zheng, PhD"
+author-title: "Instructor"
+author: "Heng Zheng, PhD"
 documentclass: book
 ---
 
@@ -59,4 +60,4 @@ if (!"skimr" %in% installed.packages()) {
 
 
 
-# Home Page
+This repository is based on teaching materials originally developed by Dr. Spencer Greenhalgh, released under the Unlicense.
