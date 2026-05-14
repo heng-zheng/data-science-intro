@@ -14,13 +14,12 @@ ICT/LIS 661-201: Introduction to Data Science
 
 ### Instructor
 
-Spencer Greenhalgh, PhD
+Heng Zheng, PhD
 
 ### Contact Information
 
-* *Office*—341 Lucille Little Library Bldg.
-* *Phone*—859.218.2294
-* *Email*—spencer.greenhalgh@uky.edu (**preferred**)
+* *Office*—317 Lucille Little Library Bldg.
+* *Email*—hengzheng@uky.edu (**preferred**)
 * *Zoom*—[https://uky.zoom.us/my/greenhalgh](https://uky.zoom.us/my/greenhalgh)
 
 ### Response Time

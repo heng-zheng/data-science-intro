@@ -23,7 +23,8 @@ When updating course content, edit the `.qmd` files, preview the site locally, r
 ```bash
 quarto preview
 quarto render
-git add .
+git status
+git add -A
 git commit -m "Update course site"
 git push
 ```
