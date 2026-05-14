@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M10U: Consequences of Failed Predictions
 
 This chapter draws on material from:

@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M4C: Show Your Work
 
 This chapter draws on material from [7. Show Your Work](https://data-feminism.mitpress.mit.edu/pub/0vgzaln4/release/3) by [Catherine D'Ignazio](http://www.kanarinka.com/) and [Lauren Klein](https://lklein.com/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

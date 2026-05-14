@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M7U: Subjectivity in Data Visualization
 
 This chapter draws on material from: 

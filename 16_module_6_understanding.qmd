@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M6U: Unicorns, Janitors, and Rock Stars
 
 This chapter draws on material from:

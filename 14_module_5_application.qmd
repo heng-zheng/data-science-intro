@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M5A: Are Ethics Enough in Data Science?
 
 This chapter draws on material from:

@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M5C: Reflect on Theoretical and Philosophical Constraints
 
 You will complete the Module 5 Connection activity on Canvas. Please navigate to the corresponding discussion board and respond to the following prompt:

@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M3C: Writing in R Markdown
 
 This content draws on material from:

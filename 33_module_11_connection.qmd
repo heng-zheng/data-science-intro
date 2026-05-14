@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M11C: Explore Sampling With Your Own Data
 
 You will complete the Module 11 Connection activity on Canvas. Please navigate to the corresponding discussion board and respond to the following prompt:

@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>module_13_understanding – LIS/ICT 661 - Introduction to Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./38_module_13_application.html" rel="next">
+<link href="./36_module_12_connection.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e1f80fdf4f2d1822162f836d66ecff9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="stylesheets/quarto-extra.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">LIS/ICT 661 - Introduction to Data Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="./01_module_1_understanding.html">
+ <span class="dropdown-text">Module 01</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./04_module_2_understanding.html">
+ <span class="dropdown-text">Module 02</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07_module_3_understanding.html">
+ <span class="dropdown-text">Module 03</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./10_module_4_understanding.html">
+ <span class="dropdown-text">Module 04</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./13_module_5_understanding.html">
+ <span class="dropdown-text">Module 05</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./16_module_6_understanding.html">
+ <span class="dropdown-text">Module 06</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./19_module_7_understanding.html">
+ <span class="dropdown-text">Module 07</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./22_module_8_understanding.html">
+ <span class="dropdown-text">Module 08</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./25_module_9_understanding.html">
+ <span class="dropdown-text">Module 09</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./28_module_10_understanding.html">
+ <span class="dropdown-text">Module 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./31_module_11_understanding.html">
+ <span class="dropdown-text">Module 11</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./34_module_12_understanding.html">
+ <span class="dropdown-text">Module 12</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./37_module_13_understanding.html">
+ <span class="dropdown-text">Module 13</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./40_module_14_understanding.html">
+ <span class="dropdown-text">Module 14</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./43_module_15_understanding.html">
+ <span class="dropdown-text">Module 15</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./01_module_1_understanding.html" aria-current="page"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./37_module_13_understanding.html">Module 13: The Dangers of False Positives</a></li><li class="breadcrumb-item"><a href="./37_module_13_understanding.html">Understanding</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 01: Course Syllabus</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_module_1_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_module_1_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_module_1_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 02: The New(?) and Shiny(?) Science of Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_module_2_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_module_2_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_module_2_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 03: Research Paradigms and Reproducibility</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_module_3_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_module_3_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_module_3_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 04: The Value of Open Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_module_4_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_module_4_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_module_4_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 05: Numbers Don’t Speak for Themselves</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_module_5_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_module_5_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_module_5_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 06: Unicorns, Janitors, and Rock Stars</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_module_6_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17_module_6_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18_module_6_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 07: Subjectivity in Data Visualization</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19_module_7_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20_module_7_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_module_7_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 08: Statistics and Scientific Racism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_module_8_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23_module_8_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24_module_8_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 09: Linear Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./25_module_9_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./26_module_9_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./27_module_9_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 10: Consequences of Failed Predictions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./28_module_10_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./29_module_10_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30_module_10_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 11: Samples and Populations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31_module_11_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./32_module_11_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./33_module_11_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 12: Confident About What?</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./34_module_12_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./35_module_12_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./36_module_12_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 13: The Dangers of False Positives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./37_module_13_understanding.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./38_module_13_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./39_module_13_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 14: Small Stories vs.&nbsp;Big Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40_module_14_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./41_module_14_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./42_module_14_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 15: Reflecting on Data Science</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./43_module_15_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./44_module_15_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./45_module_15_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#m13u-the-dangers-of-false-positives" id="toc-m13u-the-dangers-of-false-positives" class="nav-link active" data-scroll-target="#m13u-the-dangers-of-false-positives">M13U: The Dangers of False Positives</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-dartmouth-cheating-scandal" id="toc-the-dartmouth-cheating-scandal" class="nav-link" data-scroll-target="#the-dartmouth-cheating-scandal">The Dartmouth Cheating Scandal</a></li>
+  <li><a href="#what-was-wrong-with-dartmouths-investigation" id="toc-what-was-wrong-with-dartmouths-investigation" class="nav-link" data-scroll-target="#what-was-wrong-with-dartmouths-investigation">What Was Wrong With Dartmouth’s Investigation</a></li>
+  <li><a href="#investigations-of-students-must-start-with-concrete-evidence" id="toc-investigations-of-students-must-start-with-concrete-evidence" class="nav-link" data-scroll-target="#investigations-of-students-must-start-with-concrete-evidence">Investigations of Students Must Start With Concrete Evidence</a></li>
+  <li><a href="#a-problem-with-companies-and-transparency" id="toc-a-problem-with-companies-and-transparency" class="nav-link" data-scroll-target="#a-problem-with-companies-and-transparency">A Problem with Companies and Transparency</a></li>
+  <li><a href="#not-just-dartmouth" id="toc-not-just-dartmouth" class="nav-link" data-scroll-target="#not-just-dartmouth">Not Just Dartmouth</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./37_module_13_understanding.html">Module 13: The Dangers of False Positives</a></li><li class="breadcrumb-item"><a href="./37_module_13_understanding.html">Understanding</a></li></ol></nav></header>
+
+
+
+
+<section id="m13u-the-dangers-of-false-positives" class="level1">
+<h1>M13U: The Dangers of False Positives</h1>
+<p>This chapter draws on material from:</p>
+<ul>
+<li><a href="https://www.eff.org/deeplinks/2021/04/proctoring-tools-and-dragnet-investigations-rob-students-due-process">Proctoring Tools and Dragnet Investigations Rob Students of Due Process</a>, by <a href="https://www.eff.org/about/staff/jason-kelley">Jason Kelley</a>, <a href="https://www.eff.org/about/staff/william-budington">Bill Budington</a>, and <a href="https://www.eff.org/about/staff/sophia-cope">Sophia Cope</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0</a></li>
+<li><a href="https://www.eff.org/deeplinks/2021/04/proctoring-tools-and-dragnet-investigations-rob-students-due-process">Canvas and other Online Learning Platforms Aren’t Perfect—Just Ask Students</a>, by <a href="https://www.eff.org/about/staff/jason-kelley">Jason Kelley</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0</a></li>
+<li><a href="https://www.eff.org/deeplinks/2021/08/company-behind-online-learning-platform-canvas-should-commit-transparency-due">The Company Behind Online Learning Platform Canvas Should Commit to Transparency, Due Process for Students</a>, by <a href="https://www.eff.org/about/staff/william-budington">Bill Budington</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0</a></li>
+</ul>
+<p>Changes to the source material include removal of original material, the addition of new material, combining of sources, and editing of original material for a different audience.</p>
+<p>The resulting content is licensed under licensed under <a href="https://creativecommons.org/licenses/by/4.0/us/">CC BY 4.0</a>.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Tools like confidence intervals and hypothesis testing are critical for work involving inferential statistics. They acknowledge that there’s always ambiguity in the data but give us some mathematical tools for making the most of the data that we do have. However, it’s very important that we don’t turn “making the most” into absolute confidence. Confidence intervals help us narrow in on an expected statistical range with which to make judgments, but as we discussed last week, they rely on assumptions about what is “normal” that may not hold up. Likewise, hypothesis testing helps us quantify the possibility of being wrong about new assumptions that we want to adopt; however, their very existence also acknowledges the possibility of wrongly adopting those assumptions.</p>
+<p>Later this week, you’ll read about Type I errors, when we reject a null hypothesis (a term we’ll read more about shortly) even though that hypothesis is actually true. Another name for the Type I error is the <em>false positive</em>. For example, if I take a COVID-19 rapid test, the null hypothesis is that I don’t have COVID-19. While COVID-19 testing is important, generally trustworthy, and really helpful, it isn’t perfect. There’s always the possibility that the test will reject the null hypothesis (that I don’t have COVID-19) and lead me to believe that I’m sick when in reality, I’m actually perfectly healthy. Of course, in the case of COVID-19, what’s more dangerous is a <em>false negative</em>—when a test doesn’t find evidence to reject the null hypothesis but, in fact, the test-taker is actually COVID-positive.</p>
+<p>False positives can crop up in many applications of data science, and they also serve as a helpful metaphor for other ways that we can read too much into our data. In this chapter, we’ll read about ways that educators can read too much into educational data (including data provided by platforms like Canvas!) and come to wrong conclusions. This is not a literal case of false positives, but the story remains an important reminder that we need to be humble and cautious about trusting data!</p>
+</section>
+<section id="the-dartmouth-cheating-scandal" class="level2">
+<h2 class="anchored" data-anchor-id="the-dartmouth-cheating-scandal">The Dartmouth Cheating Scandal</h2>
+<p>Like many schools, Dartmouth College has increasingly turned to technology to monitor students taking exams at home—this was especially true during the worst of the COVID-19 pandemic. While many universities have used proctoring tools that purport to help educators prevent cheating, Dartmouth’s Geisel School of Medicine went dangerously further in 2021. Apparently working under an assumption of guilt, the university launched a dragnet investigation of complicated system logs, searching for data that might reveal student misconduct, without a clear understanding of how those logs can be littered with false positives. Worse still, those attempting to assert their rights have been met with a university administration willing to trust opaque investigations of inconclusive data sets more than their own students.</p>
+<p><a href="https://www.bostonglobe.com/2021/04/15/metro/cheating-allegations-chill-students-dartmouth-medical-school/">The Boston Globe</a> explained that the medical school administration’s attempts to detect supposed cheating became a flashpoint on campus, exemplifying a worrying trend of schools prioritizing misleading data over the word of their students. The misguided dragnet investigation has cast a shadow over the career aspirations of over twenty medical students.</p>
+</section>
+<section id="what-was-wrong-with-dartmouths-investigation" class="level2">
+<h2 class="anchored" data-anchor-id="what-was-wrong-with-dartmouths-investigation">What Was Wrong With Dartmouth’s Investigation</h2>
+<p>In March 2021, Dartmouth’s Committee on Student Performance and Conduct (CSPC) accused several students of accessing restricted materials online during exams. These accusations were based on a flawed review of an entire year’s worth of the students’ log data from Canvas, the online learning platform that contains class lectures and information. This broad search was instigated by a single incident of confirmed misconduct, according to a contentious town hall between administrators and students (the Electronic Frontier Foundation—or EFF—<a href="https://youtu.be/tI2VRDOsQtc">re-uploaded this town hall</a> after the original recording was put behind a Dartmouth login screen). These logs show traffic between students’ devices and specific files on Canvas, some of which contain class materials, such as lecture slides. At first glance, the logs showing that a student’s device connected to class files would appear incriminating: timestamps indicate the files were retrieved while students were taking exams.</p>
+<p>But after reviewing the logs sent to them by a student advocate, it became clear to the EFF that there was no way to determine whether this traffic happened intentionally (as a result of student action) or instead automatically (as background requests from student devices that were logged into Canvas but not in use). In other words, rather than the files being deliberately accessed during exams, the logs could have easily been generated by the automated syncing of course material to devices logged into Canvas but not used during an exam. It was simply impossible to know from the logs alone if a student intentionally accessed any of the files, or if the pings exist due to automatic refresh processes that are commonplace in most websites and online services. Most of us don’t log out of every app, service, or webpage on our smartphones when we’re not using them.</p>
+<p>Much like a cell phone pinging a tower, the logs showed files being pinged in short time periods and sometimes being accessed at the exact second that students are also entering information into the exam, suggesting a <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">non-deliberate process</a>. The logs also reveal that the files accessed are largely irrelevant to the tests in question, also indicating an automated, random process. A UCLA statistician wrote a letter explaining that <a href="https://www.eff.org/document/statistical-fallacy-letter-geisel-school-medicine">even an automated process can result in multiple false-positive outcomes</a>. Canvas’s <a href="https://portal.inshosteddata.com/docs#requests">own documentation</a> explicitly states that the data in these logs “is meant to be used for rollups and analysis in the aggregate, <em>not</em> in isolation for auditing or other high-stakes analysis involving examining single users or small samples.” Given the technical realities of how these background refreshes take place, the log data alone should be nowhere near sufficient to convict a student of academic dishonesty.</p>
+<p>Along with The Foundation for Individual Rights in Education (FIRE), EFF sent a letter to the Dean of the Medical School on March 30th, <a href="https://www.eff.org/document/fire-and-eff-letter-dartmouth">explaining how these background connections work</a> and pointing out that the university has likely turned random correlations into accusations of misconduct. The Dean’s reply was that the cases are being reviewed fairly.</p>
+<p>The EFF disagreed, arguing that the administration was the victim of <a href="https://www.psychologytoday.com/us/blog/science-choice/201504/what-is-confirmation-bias">confirmation bias</a>, turning fallacious evidence of misconduct into accusations of cheating. The school <em>has</em> admitted in some cases that the log data appeared to have been created automatically, acquitting some students who pushed back. However, other students have been sanctioned, apparently entirely based on this spurious interpretation of the log data. Many others are anxiously waiting to hear whether they will be convicted so they can begin the appeal process, potentially with legal counsel.</p>
+<p>These convictions carry heavy weight, leaving permanent marks on student transcripts that could make it harder for them to enter residencies and complete their medical training. At this level of education, this is not just about being accused of cheating on a specific exam. Being convicted of academic dishonesty could derail an entire career.</p>
+</section>
+<section id="investigations-of-students-must-start-with-concrete-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="investigations-of-students-must-start-with-concrete-evidence">Investigations of Students Must Start With Concrete Evidence</h2>
+<p>Though this investigation wasn’t the result of proctoring software, it was part and parcel of a larger problem: educators have used the pandemic as an excuse to comb for evidence of cheating in places that are far outside their technical expertise. Proctoring tools and investigations like this one flag students based on flawed metrics and misunderstandings of technical processes, rather than concrete evidence of misconduct.</p>
+<p>Proctoring software that assumes all students take tests the same way—for example, in rooms that they can control, their eyes straight ahead, fingers typing at a routine pace—puts a black mark on the record of students who operate outside the norm. One problem that has been <a href="https://cdt.org/insights/how-automated-test-proctoring-software-discriminates-against-disabled-students/">widely documented</a> with proctoring software is that students with disabilities (especially those with motor impairment) are consistently flagged as exhibiting suspicious behavior by software suites intended to detect cheating. Other proctoring software has flagged students for <a href="https://www.theverge.com/2020/4/29/21232777/examity-remote-test-proctoring-online-class-education">technical snafus</a> such as device crashes and Internet cuts out, as well as <em><a href="https://news.bloomberglaw.com/business-and-practice/few-fixes-made-to-february-remote-bar-exams-after-cheating-snafu">completely normal behavior</a></em> that could indicate misconduct if you squint hard enough.</p>
+<p>Throughout the pandemic, far too many schools ignored legitimate student concerns about inadequate, or overbroad, anti-cheating software. Across the country, thousands of students, <a href="https://www.edsurge.com/news/2020-12-17-2-000-parents-petition-mcgraw-hill-to-stop-using-remote-proctoring-tools-in-courseware">and some parents</a>, <a href="https://www.eff.org/deeplinks/2020/09/students-are-pushing-back-against-proctoring-surveillance-apps">have created petitions</a> against the use of proctoring tools, most of which (<a href="https://www.dailycal.org/2020/04/05/online-exam-proctoring-no-longer-allowed-for-uc-berkeley-classes/">though not all</a> have been <a href="https://thelinknewspaper.ca/article/students-say-concordias-continued-use-of-proctorio-infringes-upon-their-privacy">ignored</a>. Students taking the California and New York bar exams—as well as <a href="https://www.eff.org/deeplinks/2020/09/eff-tells-california-supreme-court-not-require-examsoft-bar-exam">several advocacy organizations</a> and <a href="https://www.abajournal.com/news/article/citing-fires-racism-and-technology-issues-california-law-deans-ask-for-open-book-bar-exam">a group of deans</a>—advocated against the use of proctoring tools for those exams. As expected, many of those students then experienced “<a href="https://www.abajournal.com/web/article/amid-claims-that-online-bar-exam-went-well-some-test-takers-have-a-different-view">significant software problems</a>” with the Examsoft proctoring software, specifically, causing some students to fail.</p>
+<p>Many proctoring companies have defended their <a href="https://www.eff.org/deeplinks/2020/08/proctoring-apps-subject-students-unnecessary-surveillance">dangerous, inequitable, privacy-invasive, and often flawed software tools</a> by pointing out that humans—meaning teachers or administrators—usually have the ability to <a href="https://examsoft.com/resources/flagging-isnt-cheating">review flagged exams</a> to determine whether or not a student was actually cheating. That defense rings hollow when those reviewing the results don’t have the technical expertise—or in some cases, the time or inclination—to properly examine them.</p>
+<p>Similar to schools that rely heavily on flawed proctoring software, Dartmouth medical school has cast suspicion on students by relying on access logs that are far from concrete evidence of cheating. Simply put: these logs should not be used as the sole evidence for potentially ruining a student’s career.</p>
+<p>After press coverage from the <em>New York Times</em>, which also found that students’ devices could automatically generate Canvas activity data even when no one was using them, Dartmouth’s administration <a href="https://www.eff.org/deeplinks/2021/06/dartmouth-ends-misguided-investigation-after-students-rights-groups-speak-out">retracted the allegations</a>—but not before students spent months fighting them and fearing what they could mean for their futures. Unfortunately, this has not stopped school officials from considering their interpretation of data to be above reproach.</p>
+</section>
+<section id="a-problem-with-companies-and-transparency" class="level2">
+<h2 class="anchored" data-anchor-id="a-problem-with-companies-and-transparency">A Problem with Companies and Transparency</h2>
+<p>Though <a href="https://portal.inshosteddata.com/docs#requests">Canvas</a> and <a href="https://www.eff.org/deeplinks/2021/08/what-do-when-schools-use-canvas-or-blackboard-logs-allege-cheating">Blackboard</a> have publicly stated that their logs should not be used for disciplinary decisions regarding high-stakes testing, we’ve heard other stories from students who were accused of misconduct—even well before the pandemic—based on inadequate interpretations of data from these platforms.</p>
+<p>Since January of 2021, the Canvas instructor guide has <a href="https://community.canvaslms.com/t5/Instructor-Guide/How-do-I-view-a-quiz-log-for-a-student/ta-p/580">explicitly stated</a>: “Quiz logs should not be used to validate academic integrity or identify occurrences of cheating.” In February, an employee of Instructure (the company behind Canvas) commented in a community forum that “weirdness in Canvas Quiz Logs may appear because of various end-user [student] activities or because Canvas prioritizes saving student’s quiz data ahead of logging events. Also, there is a known issue with logging of ‘multiple answer’ questions.”. The employee concluded that “unfortunately, I can’t definitively predict what happened on the users’ end in that particular case.”</p>
+<p>Despite the admitted and inherently unreliable nature of Canvas logs, and an outcry by accused students and digital rights organizations, schools continue to rely on Canvas logs to determine cheating—and Instructure continues to act as if nothing is wrong. Meanwhile, students’ educational careers are being harmed by these flimsy accusations.</p>
+<p>In 2020, the administration of James Madison University <a href="https://www.breezejmu.org/news/students-question-the-legitimacy-of-the-canvas-activity-log/article_8664ca28-1eda-11eb-8982-eb216215de51.html">lowered the grades of students</a> who had been flagged as “inactive” during an exam according to Canvas test-taking logs. Students there spoke out to criticize the validity of the logs. And in the past few months, EFF has heard from other students around the country who have been accused of cheating by their schools, based solely or primarily on Canvas logs.</p>
+<p>Cheating accusations can result in lowered grades, a black mark on student transcripts, suspension, and even expulsion. Despite the serious consequences students face, they often have very limited recourse. Disturbingly, Canvas provides logs to administrators and teachers, but accused students have been unable to see those same logs, either via the platform itself or from school officials. Students deserve better.</p>
+<p>Instructure (and other companies) must do better. Admitting to the unreliability of Canvas logs in obscure webpages is not enough. Instructure ought to to issue a clear, public announcement that Canvas logs are unreliable and should not be used to fuel cheating accusations. The company should also allow students to access the same logs their schools are increasingly using to accuse them of academic misconduct—which is important because, when viewed in their <em>entirety</em>, Canvas logs often don’t rationally reveal activity consistent with cheating</p>
+<p>Instructure has a responsibility to prevent schools from misusing their products. Taking action now would show the company’s commitment to the integrity of the academic process, and would give students a chance to face their accusers on the same footing, rather than resigning to an unjust and opaque process.</p>
+</section>
+<section id="not-just-dartmouth" class="level2">
+<h2 class="anchored" data-anchor-id="not-just-dartmouth">Not Just Dartmouth</h2>
+<p>In 2018, an undergraduate student at Brown University was penalized based on Canvas access logs and subsequently contacted the EFF. The student had attempted to access the Canvas database immediately before an exam, and had then left multiple browser windows open to the Canvas web address on her mobile phone. The phone remained unused in her backpack during the exam, during which time the log records (inaccurately) appeared to indicate that the site was being actively accessed by a user.</p>
+<p>After being accused of cheating based on this Canvas log data, the student reached out to Canvas. Multiple Canvas technical support representatives responded by explaining that the log data was not a reliable record of user access. The student shared their statements with Brown. Notably, the student, who had a 4.0 record, had little motive to cheat on the exam at issue, rendering the cheating accusation—based as it was virtually entirely on the log data—all the more flimsy.</p>
+<p>A Brown disciplinary panel nonetheless ruled against the student, and placed a permanent mark on her academic record, grounding its decision on the accuracy of the Canvas log data.</p>
+<p>Last year, in the wake of Dartmouth’s apology to its wrongfully accused students, and Canvas’ more public acknowledgment that its logs should not be used as the basis for disciplinary decisions, the former student asked Brown to clear her academic record. Brown, however, refused even to consider voiding its disciplinary decision on the ground that the student had no remaining right to appeal. This is a common thread we’ve seen in these situations: the students at Dartmouth were also not afforded <a href="https://www.thefire.org/citing-appalling-due-process-failures-at-root-of-cheating-scandal-fire-demands-answers-from-dartmouth/">reasonable due process</a>—they were not provided complete data logs for the exams, were given less than 48 hours to respond to the charges (and only two minutes to make their cases in online hearings), and were purportedly told to admit guilt.</p>
+<p>In an implicit acknowledgment of its error, Brown now says that it will provide its former student with a letter of support if she applies to graduate school. An implicit admission of injustice, however, is not a sufficient remedy. Like Dartmouth, Brown should withdraw the record of the discipline it wrongfully imposed on this student, as well as any others who may have likewise been found responsible for cheating based on such unreliable log records.</p>
+<p>Schools should accept that Canvas logs cannot replace concrete, dispositive evidence of cheating. In fact, the EFF <a href="https://www.eff.org/deeplinks/2021/08/what-do-when-schools-use-canvas-or-blackboard-logs-allege-cheating">has written a guide</a> for educating administrators and teachers on these logs’ inaccuracy.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The “false positives” in these stories are not Type I errors as we’ll be discussing in the context of hypothesis testing. Nonetheless, they serve as powerful reminders that <em>data cannot always be trusted</em>. These universities didn’t necessarily act maliciously—indeed, it’s understandable that institutions of higher education would want to crack down on cheating! Instead, the main error that these schools made was assuming that data are always objective and trustworthy instead of being open to the ways in which seemingly straightforward data can fail us. As data scientists, it’s important that we avoid the same mistake.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/heng-zheng\.github\.io\/data-science-intro\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./36_module_12_connection.html" class="pagination-link" aria-label="Connection">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Connection</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./38_module_13_application.html" class="pagination-link" aria-label="Application">
+        <span class="nav-page-text">Application</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

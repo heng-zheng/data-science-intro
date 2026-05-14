@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M4U: The Value of Open Data
 
 This chapter draws on material from [Open Education Science](https://doi.org/10.1177/2332858418787466) by [Tim van der Zee](https://scholar.google.com/citations?user=vsuJSN0AAAAJ) and [Justin Reich](https://tsl.mit.edu/team/justin-reich/), licensed under [CC BY-NC 4.0](https://www.creativecommons.org/licenses/by-nc/4.0/).

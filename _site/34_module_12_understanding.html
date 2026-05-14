@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>module_12_understanding – LIS/ICT 661 - Introduction to Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./35_module_12_application.html" rel="next">
+<link href="./33_module_11_connection.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e1f80fdf4f2d1822162f836d66ecff9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="stylesheets/quarto-extra.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">LIS/ICT 661 - Introduction to Data Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="./01_module_1_understanding.html">
+ <span class="dropdown-text">Module 01</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./04_module_2_understanding.html">
+ <span class="dropdown-text">Module 02</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07_module_3_understanding.html">
+ <span class="dropdown-text">Module 03</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./10_module_4_understanding.html">
+ <span class="dropdown-text">Module 04</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./13_module_5_understanding.html">
+ <span class="dropdown-text">Module 05</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./16_module_6_understanding.html">
+ <span class="dropdown-text">Module 06</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./19_module_7_understanding.html">
+ <span class="dropdown-text">Module 07</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./22_module_8_understanding.html">
+ <span class="dropdown-text">Module 08</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./25_module_9_understanding.html">
+ <span class="dropdown-text">Module 09</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./28_module_10_understanding.html">
+ <span class="dropdown-text">Module 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./31_module_11_understanding.html">
+ <span class="dropdown-text">Module 11</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./34_module_12_understanding.html">
+ <span class="dropdown-text">Module 12</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./37_module_13_understanding.html">
+ <span class="dropdown-text">Module 13</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./40_module_14_understanding.html">
+ <span class="dropdown-text">Module 14</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./43_module_15_understanding.html">
+ <span class="dropdown-text">Module 15</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./01_module_1_understanding.html" aria-current="page"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./34_module_12_understanding.html">Module 12: Confident About What?</a></li><li class="breadcrumb-item"><a href="./34_module_12_understanding.html">Understanding</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 01: Course Syllabus</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_module_1_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_module_1_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_module_1_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 02: The New(?) and Shiny(?) Science of Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_module_2_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_module_2_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_module_2_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 03: Research Paradigms and Reproducibility</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_module_3_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_module_3_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_module_3_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 04: The Value of Open Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_module_4_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_module_4_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_module_4_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 05: Numbers Don’t Speak for Themselves</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_module_5_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_module_5_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_module_5_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 06: Unicorns, Janitors, and Rock Stars</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_module_6_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17_module_6_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18_module_6_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 07: Subjectivity in Data Visualization</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19_module_7_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20_module_7_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_module_7_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 08: Statistics and Scientific Racism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_module_8_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23_module_8_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24_module_8_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 09: Linear Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./25_module_9_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./26_module_9_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./27_module_9_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 10: Consequences of Failed Predictions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./28_module_10_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./29_module_10_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30_module_10_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 11: Samples and Populations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31_module_11_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./32_module_11_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./33_module_11_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 12: Confident About What?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./34_module_12_understanding.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./35_module_12_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./36_module_12_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 13: The Dangers of False Positives</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./37_module_13_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./38_module_13_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./39_module_13_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 14: Small Stories vs.&nbsp;Big Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40_module_14_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./41_module_14_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./42_module_14_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 15: Reflecting on Data Science</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./43_module_15_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./44_module_15_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./45_module_15_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#m12u-confident-about-what" id="toc-m12u-confident-about-what" class="nav-link active" data-scroll-target="#m12u-confident-about-what">M12U: Confident About What?</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#travelingwhiletrans" id="toc-travelingwhiletrans" class="nav-link" data-scroll-target="#travelingwhiletrans">#TravelingWhileTrans</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./34_module_12_understanding.html">Module 12: Confident About What?</a></li><li class="breadcrumb-item"><a href="./34_module_12_understanding.html">Understanding</a></li></ol></nav></header>
+
+
+
+
+<section id="m12u-confident-about-what" class="level1">
+<h1>M12U: Confident About What?</h1>
+<p>This chapter draws on material from <a href="https://designjustice.mitpress.mit.edu/pub/ap8rgw5e/release/1">Introduction: #TravelingWhileTrans, Design Justice, and Escape from the Matrix of Domination</a>, by <a href="https://www.schock.cc/">Sasha Costanza-Chock</a>, licensed under CC BY 4.0</p>
+<p>Changes to the source material include adding new material, (rarely) deleting original material, changing the citation style, and adding first-person introductory and concluding language from current author.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>As we’ll see in this week’s walkthrough, confidence intervals are really important! On one hand, they’re an important recognition that even with the best applications of statistical analysis, we never have a perfect answer to the questions that we’re asking. However, they also let us skip the step of throwing our hands up in despair about the impossibility of knowing and give us a practical workaround: We may not know the exact answer, but we have a certain level of confidence that the answer falls within a given range.</p>
+<p>As we’ll see in future weeks, this kind of reasoning is really helpful in inferential statistics. Sure, we can’t answer whether a given measurement is the “correct” value, but we can use the basic ideas behind confidence intervals to shift our attention to a different question: <em>What values are unlikely to be “correct”?</em> In other words, values outside of a confidence interval are unlikely to correspond with a given true value for a particular measurement, and knowing that can be a lot more helpful.</p>
+<p>I’m being a bit ambiguous here: We need to read more about confidence intervals this week and lay some more conceptual groundwork next week before we really see how confidence intervals support inferential statistics. However, the basic idea ought to be clear by the end of this week: The more confident we are that a value ought to fall within a certain range, the more suspicious that we ought to be of values that fall outside of that range.</p>
+<p>That said, even though this kind of reasoning comes with a certain amount of statistical humility, it promotes an idea of <em>normativity.</em> That is, an idea that certain values of a particular variable are <em>normal</em>, and other values are <em>abnormal</em>, and we ought to be suspicious of abnormal values. Let’s be clear—sometimes, this reasoning is appropriate and helpful! I’m really glad that my physician can make distinctions between when my heart is behaving normally and when it’s behaving abnormally—and I’m glad that she raises suspicion when it’s behaving abnormally.</p>
+<p>However, there are also times that our confidence in the normality of certain things (and the suspicious abnormality of other things) is misplaced. Overconfidence in what is normal and what isn’t can lead to discrimination against and even persecution of people who don’t fit a particular image of normality, and that’s not a good thing.</p>
+<p>The bulk of this reading is going to include a story along these lines that I’ve taken from Dr.&nbsp;Sasha Costanza-Chock’s book <em>Design Justice</em>, as I’ve indicated above. Previously in the semester, when I’ve adapted a reading from another source, I’ve typically taken advantage of the permissive license applied to the source to add my own voice to it, edit the original language, etc.</p>
+<p>However, this is a highly personal story from Dr.&nbsp;Costanza-Chock, and it would be wildly inappropriate for me to take that same approach here. In a few cases, I have removed language that makes reference to later chapters in her book (because that could be confusing here), I have changed the citation style to fit with the rest of our readings, and I have broken up one paragraph that got overly long after making changes to citation style. Other than that, though, I have kept Dr.&nbsp;Costanza-Chock’s original language intact, and all first-person pronouns refer to her, not me.</p>
+<blockquote class="blockquote">
+<p>To make this more clear, I have used “blockquote formatting” (like this paragraph) to represent her language.</p>
+</blockquote>
+<p>As you read the story, consider how statistics, confidence, and normativity play a role in making travel by plane more difficult for some people than others. As with previous readings, this isn’t an argument for throwing out confidence intervals and the rest of data science—rather, this is another reminder of how important it is that we be mindful and careful in the ways that we apply data science in the world.</p>
+</section>
+<section id="travelingwhiletrans" class="level2">
+<h2 class="anchored" data-anchor-id="travelingwhiletrans">#TravelingWhileTrans</h2>
+<blockquote class="blockquote">
+<p>It’s June 2017, and I’m standing in the security line at the Detroit Metro Airport. I’m on my way back to Boston from the Allied Media Conference (AMC), a “collaborative laboratory of media-based organizing” that’s been held every year in Detroit for the past two decades (see alliedmedia.org). At the AMC, over two thousand people—media makers, designers, activists and organizers, software developers, artists, filmmakers, researchers, and all kinds of cultural workers—gather each June to share ideas and strategies for how to create a more just, creative, and collaborative world. As a nonbinary, trans*, femme-presenting person, my time at the AMC was deeply liberating (For a recent discussion of the increasingly widespread use of the term trans* with an asterisk, see Halberstam [2018]). It’s a conference that strives harder than any that I know of to be inclusive of all kinds of people, including queer, trans*, intersex, and gender-non-conforming (QTI/GNC) folks. Although it’s far from perfect, and every year inevitably brings new challenges and difficult conversations about what it means to construct a truly inclusive space, it’s a powerful experience. Emerging from nearly a week immersed in this parallel world, I’m tired, but on a deep level, refreshed; my reservoir of belief in the possibility of creating better futures has been replenished.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>I will certainly be spared the most disruptive and harmful possible outcomes of security screening. For example, I don’t have to worry that this process will lead to my being placed in a detention center or in deportation proceedings; I won’t be hooded and whisked away to Guantanamo Bay or to one of the many other secret prisons that form part of the global infrastructure of the so-called war on terror (Sadat, 2005); most likely, I won’t even miss my flight while detained for what security expert Bruce Schneier (2006) describes as “security theater.” Only once in all of my travels have I been taken aside, placed into a waiting room, and subjected to additional questioning by the Department of Homeland Security (DHS). Despite my participation in social movement networks, including the global justice movement, Indymedia, the immigrant rights movement, countersurveillance work, and more, my white skin, institutional affiliations, educational background, and US citizenship have largely protected me from the most egregious types of abuse by state power.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>On the other hand, my heartbeat speeds up slightly as I near the end of the line, because I know that I’m almost certainly about to experience an embarrassing, uncomfortable, and perhaps humiliating search by a Transportation Security Administration (TSA) officer, after my body is flagged as anomalous by the millimeter wave scanner. I know that this is almost certainly about to happen because of the particular sociotechnical configuration of gender normativity (<em>cis-normativity</em>, or the assumption that all people have a gender identity that is consistent with the sex they were assigned at birth) that has been built into the scanner, through the combination of user interface (UI) design, scanning technology, binary-gendered body-shape data constructs, and risk detection algorithms, as well as the socialization, training, and experience of the TSA agents (Costello, 2016).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>TSA agent motions me to step into the millimeter wave scanner. I raise my arms and place my hands in a triangle shape, palms facing forward, above my head. The scanner spins around my body, and then the agent signals for me to step forward out of the machine and wait with my feet on the pad just past the scanner exit. I glance to the left, where a screen displays an abstracted outline of a human body. As I expected, bright fluorescent yellow pixels on the flat-panel display highlight my groin area. You see, when I entered the scanner, the TSA operator on the other side was prompted by the UI to select Male or Female; the button for Male is blue, the button for Female is pink. Since my gender presentation is nonbinary femme, usually the operator selects Female. However, the three-dimensional contours of my body, at millimeter resolution, differ from the statistical norm of female bodies as understood by the data set and risk algorithm designed by the manufacturer of the millimeter wave scanner (and its subcontractors), and as trained by a small army of clickworkers tasked with labeling and classification (as scholars Lilly Irani [2016], Nick Dyer-Witheford [2016], Mary Gray and Siddharth Suri [2019], among others, remind us). If the agent selects Male, my breasts are large enough, statistically speaking, in comparison to the normative male body-shape construct in the database, to trigger an anomaly warning and a highlight around my chest area. If they select Female, my groin area deviates enough from the statistical female norm to trigger the risk alert. In other words, I can’t win. This sociotechnical system is sure to mark me as “risky,” and that will trigger an escalation to the next level in the TSA security protocol.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>This is, in fact, what happens: I’ve been flagged. The screen shows a fluorescent yellow highlight around my groin. Next, the agent asks me to step aside, and (as usual) asks for my consent to a physical body search. Typically, once I’m close enough, the agent becomes confused about my gender. This presents a problem, because the next fork in the security protocol is for either a male or female TSA agent to conduct a body search by running their hands across my arms and armpits, chest, hips and legs, and inner thighs. According to TSA policy, “if a pat-down is performed, it will be conducted by an officer of the same gender as you present yourself” (see https://www.tsa.gov/transgender-passengers). Sometimes, the agent will assume I prefer to be searched by a female agent; sometimes, a male. Occasionally, they ask for my preference. Unfortunately, “neither” is an honest but unacceptable response. Today, I’m particularly unlucky: a nearby male-presenting agent, observing the interaction, loudly states “I’ll do it!” and strides over to me. I say, “Aren’t you going to ask me what I prefer?” He pauses, then begins to move toward me again, but the female-presenting agent who is operating the scanner stops him. She asks me what I prefer. Now I’m standing in public, flanked by two TSA agents, with a line of curious travelers watching the whole interaction. Ultimately, the male-presenting agent backs off and the female-presenting agent searches me, making a face as if she’s as uncomfortable as I am, and I’m cleared to continue on to my gate.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The point of this story is to provide a small but concrete example from my own daily lived experience of how larger systems—including norms, values, and assumptions—are encoded in and reproduced through the design of sociotechnical systems, or in political theorist Langdon Winner’s (1980) famous words, how “artifacts have politics.” In this case, cis-normativity is enforced at multiple levels of a traveler’s interaction with airport security systems. The database, models, and algorithms that assess deviance and risk are all binary and cis-normative. The male/female gender selector UI is binary and cis-normative. As Anna Lauren Hoffmann <a href="https://twitter.com/annaeveryday/status/1036635912761819136">notes</a> about the simplified gender binary interface, “The thing that really gets me is that this screen was developed as a privacy-preserving compromise after folks realized the level of detail these machines were <em>actually</em> capable of rendering!”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The assignment of a male or female TSA agent to perform the additional, more invasive search is cis-normative and binary-gender normative as well. At each stage of this interaction, airport security technology, databases, algorithms, risk assessment, and practices are all designed based on the assumption that there are only two genders, and that gender presentation will conform with so-called biological sex. Anyone whose body doesn’t fall within an acceptable range of “deviance” from a normative binary body type is flagged as risky and subjected to a heightened and disproportionate burden of the harms (both small and, potentially, large) of airport security systems and the violence of empire they instantiate. QTI/GNC people are thus disproportionately burdened by the design of millimeter wave scanning technology and the way that technology is used. The system is biased against us. Most cisgender people are unaware of the fact that the millimeter wave scanners operate according to a binary and cis-normative gender construct; most trans* people know, because it directly affects our lives. In 2009, Toby Beauchamp wrote about state surveillance and trans* concealment/visibility. In September of 2016, Shadi Petosky brought national attention to the challenges of #TravelingWhileTrans when she live-tweeted her experience with an invasive search by TSA agents at the Orlando airport, after she was flagged in a millimeter wave scan for presenting as female while having a penis (see Lee, 2016).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>These systems are biased against QTI/GNC people, as I’ve described; against Black women, who frequently experience invasive searches of their hair, as <a href="https://www.propublica.org/article/tsa-not-discriminating-against-black-women-but-their-body-scanners-might-be">documented</a> by the team of investigative journalists at ProPublica; and against Sikh men, Muslim women, and others who wear headwraps, as described by sociologist Simone Browne (2015) in her brilliant book <em>Dark Matters</em>. As Browne discusses, and as Joy Buolamwini (2017), founder of the Algorithmic Justice League, technically demonstrates, gender itself is racialized: humans have trained our machines to categorize faces and bodies as male and female through lenses tinted by the optics of white supremacy. Airport security is also systematically biased against Disabled people, who are more likely to be flagged as risky if they have non-normative body shapes and/or use prostheses, as well as anyone who uses a wearable or implanted medical device. Those who are simultaneously QTI/GNC, Black, Indigenous, people of color (PoC), Muslim, Sikh, immigrant, and/or Disabled are doubly, triply, or multiply burdened by, and face the highest risk of harms from, this system.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>I first publicly shared this experience in an essay for the <em>Journal of Design and Science</em> that I wrote in response to the “Resisting Reduction” manifesto (Ito, 2017), a timely call for thoughtful conversation about the limits and possibilities of artificial intelligence (AI). That call resonated very deeply with me because as a nonbinary trans* feminine person, I walk through a world that has in many ways been designed to deny the possibility of my existence. The same cisnormative, racist, and ableist approach that is used to train the models of the millimeter wave scanners is now being used to develop AI in nearly every domain. From my standpoint, I worry that the current path of AI development will reproduce systems that erase those of us on the margins, whether intentionally or not, through the mundane and relentless repetition of reductive norms in a thousand daily interactions with AI systems that, increasingly, weave the very fabric of our lives.</p>
+</blockquote>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Not all of the normativity described by Dr.&nbsp;Costanza-Chock in this story is a result of data science and confidence intervals, but data science and confidence intervals nearly always contribute to our ideas of what is normal and what is suspiciously abnormal. We cannot allow ourselves to use data science in a way that makes some people normal and other people suspiciously abnormal—and yet, as Dr.&nbsp;Costanza-Chock suggests, this is something that is already happening. As you continue working with data science in this class and in other spaces, think carefully about what you’re placing confidence in and whether that is warranted!</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Beauchamp, T. (2009). Artful concealment and strategic visibility: Transgender bodies and U.S. state surveillance after 9/11. <em>Surveillance &amp; Society</em>, <em>6</em>(4), 356–366.</p>
+<p>Browne, S. (2015). <em>Dark matters: On the surveillance of Blackness</em>. Duke University Press.</p>
+<p>Costello, C. G. (2016, January 3). Traveling while trans: The false promise of better treatment. <em>Trans Advocate</em>. http://transadvocate.com/the-tsa-a-binary-body-system-in-practice_n_15540.htm.</p>
+<p>Halberstam, J. (2018). <em>Trans*: A Quick and Quirky Account of Gender Variability</em>. Oakland: University of California Press.</p>
+<p>Ito, J. (2017). Resisting reduction: A manifesto. <em>Journal of Design and Science</em>. https://jods.mitpress.mit.edu/pub/resisting-reduction.</p>
+<p>Lee, J. (2016, February 3). Alarming TSA. <em>The Fourth Wave</em>. https://thefourthwavepitt.com/2016/02/03/alarming-tsa.</p>
+<p>Sadat, L. N. (2005). Ghost prisoners and black sites: Extraordinary rendition under international law. <em>Case Western Reserve Journal of International Law</em>, <em>37</em>, 309–342.</p>
+<p>Schneier, B. (2006). <em>Beyond fear: Thinking sensibly about security in an uncertain world</em>. Springer Science &amp; Business Media.</p>
+<p>Winner, L. (1980). Do artifacts have politics? <em>Daedalus</em> <em>109</em>(1), 121–136.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/heng-zheng\.github\.io\/data-science-intro\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./33_module_11_connection.html" class="pagination-link" aria-label="Connection">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Connection</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./35_module_12_application.html" class="pagination-link" aria-label="Application">
+        <span class="nav-page-text">Application</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

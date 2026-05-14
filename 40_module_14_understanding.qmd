@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M14U: Small Stories vs. Big Data
 
 This chapter draws on material from: [Autoethnography: An Overview](https://www.qualitative-research.net/index.php/fqs/article/view/1589) by Carolyn Ellis, [Tony E. Adams](https://tonyeadams.com/), and Arthur P. Bochner, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M2U: The New(?) and Shiny(?) Science of Data
 
 This chapter draws on material from:

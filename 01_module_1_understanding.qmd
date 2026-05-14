@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M1U: Course Syllabus
 
 The syllabus for this course is available as a PDF through Canvas. However, it is also reproduced here for the purposes of annotation.

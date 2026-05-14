@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M4A: Find a Dataset Relevant To You
 
 ## Introduction

@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M6C: Practice Wrangling and Tidying Your Own Data
 
 You will complete the Module 6 Connection activity on Canvas. Please navigate to the corresponding discussion board and respond to the following prompt:

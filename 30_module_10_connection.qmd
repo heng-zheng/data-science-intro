@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M10C: Perform a Multiple Regression With Your Own Data
 
 You will complete the Module 10 Connection activity on Canvas. Please navigate to the corresponding discussion board and respond to the following prompt:

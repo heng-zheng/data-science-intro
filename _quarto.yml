@@ -1,63 +1,191 @@
 project:
-  type: book
-  output-dir: _book
+  type: website
+  output-dir: _site
 
-book:
-  title: "Introduction to Data Science"
-  subtitle: "A Remixed Textbook for ICT/LIS 661 at the University of Kentucky [Fall 2025 Edition]"
-  author: "Heng Zheng, PhD"
-  chapters:
-    - index.qmd
-    - 01_module_1_understanding.qmd
-    - 02_module_1_application.qmd
-    - 03_module_1_connection.qmd
-    - 04_module_2_understanding.qmd
-    - 05_module_2_application.qmd
-    - 06_module_2_connection.qmd
-    - 07_module_3_understanding.qmd
-    - 08_module_3_application.qmd
-    - 09_module_3_connection.qmd
-    - 10_module_4_understanding.qmd
-    - 11_module_4_application.qmd
-    - 12_module_4_connection.qmd
-    - 13_module_5_understanding.qmd
-    - 14_module_5_application.qmd
-    - 15_module_5_connection.qmd
-    - 16_module_6_understanding.qmd
-    - 17_module_6_application.qmd
-    - 18_module_6_connection.qmd
-    - 19_module_7_understanding.qmd
-    - 20_module_7_application.qmd
-    - 21_module_7_connection.qmd
-    - 22_module_8_understanding.qmd
-    - 23_module_8_application.qmd
-    - 24_module_8_connection.qmd
-    - 25_module_9_understanding.qmd
-    - 26_module_9_application.qmd
-    - 27_module_9_connection.qmd
-    - 28_module_10_understanding.qmd
-    - 29_module_10_application.qmd
-    - 30_module_10_connection.qmd
-    - 31_module_11_understanding.qmd
-    - 32_module_11_application.qmd
-    - 33_module_11_connection.qmd
-    - 34_module_12_understanding.qmd
-    - 35_module_12_application.qmd
-    - 36_module_12_connection.qmd
-    - 37_module_13_understanding.qmd
-    - 38_module_13_application.qmd
-    - 39_module_13_connection.qmd
-    - 40_module_14_understanding.qmd
-    - 41_module_14_application.qmd
-    - 42_module_14_connection.qmd
-    - 43_module_15_understanding.qmd
-    - 44_module_15_application.qmd
-    - 45_module_15_connection.qmd
+website:
+  title: "LIS/ICT 661 - Introduction to Data Science"
+  site-url: "https://heng-zheng.github.io/data-science-intro/"
+  page-navigation: true
+  reader-mode: false
+  navbar:
+    background: "#0033A0"
+    foreground: "#ffffff"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Modules"
+        menu:
+          - text: "Module 01"
+            href: 01_module_1_understanding.qmd
+          - text: "Module 02"
+            href: 04_module_2_understanding.qmd
+          - text: "Module 03"
+            href: 07_module_3_understanding.qmd
+          - text: "Module 04"
+            href: 10_module_4_understanding.qmd
+          - text: "Module 05"
+            href: 13_module_5_understanding.qmd
+          - text: "Module 06"
+            href: 16_module_6_understanding.qmd
+          - text: "Module 07"
+            href: 19_module_7_understanding.qmd
+          - text: "Module 08"
+            href: 22_module_8_understanding.qmd
+          - text: "Module 09"
+            href: 25_module_9_understanding.qmd
+          - text: "Module 10"
+            href: 28_module_10_understanding.qmd
+          - text: "Module 11"
+            href: 31_module_11_understanding.qmd
+          - text: "Module 12"
+            href: 34_module_12_understanding.qmd
+          - text: "Module 13"
+            href: 37_module_13_understanding.qmd
+          - text: "Module 14"
+            href: 40_module_14_understanding.qmd
+          - text: "Module 15"
+            href: 43_module_15_understanding.qmd
+      - text: "Syllabus"
+        href: 01_module_1_understanding.qmd
+
+  sidebar:
+    - id: modules
+      title: "Modules"
+      style: docked
+      collapse-level: 1
+      contents:
+        - section: "Module 01: Course Syllabus"
+          contents:
+            - text: "Understanding"
+              href: 01_module_1_understanding.qmd
+            - text: "Application"
+              href: 02_module_1_application.qmd
+            - text: "Connection"
+              href: 03_module_1_connection.qmd
+        - section: "Module 02: The New(?) and Shiny(?) Science of Data"
+          contents:
+            - text: "Understanding"
+              href: 04_module_2_understanding.qmd
+            - text: "Application"
+              href: 05_module_2_application.qmd
+            - text: "Connection"
+              href: 06_module_2_connection.qmd
+        - section: "Module 03: Research Paradigms and Reproducibility"
+          contents:
+            - text: "Understanding"
+              href: 07_module_3_understanding.qmd
+            - text: "Application"
+              href: 08_module_3_application.qmd
+            - text: "Connection"
+              href: 09_module_3_connection.qmd
+        - section: "Module 04: The Value of Open Data"
+          contents:
+            - text: "Understanding"
+              href: 10_module_4_understanding.qmd
+            - text: "Application"
+              href: 11_module_4_application.qmd
+            - text: "Connection"
+              href: 12_module_4_connection.qmd
+        - section: "Module 05: Numbers Don't Speak for Themselves"
+          contents:
+            - text: "Understanding"
+              href: 13_module_5_understanding.qmd
+            - text: "Application"
+              href: 14_module_5_application.qmd
+            - text: "Connection"
+              href: 15_module_5_connection.qmd
+        - section: "Module 06: Unicorns, Janitors, and Rock Stars"
+          contents:
+            - text: "Understanding"
+              href: 16_module_6_understanding.qmd
+            - text: "Application"
+              href: 17_module_6_application.qmd
+            - text: "Connection"
+              href: 18_module_6_connection.qmd
+        - section: "Module 07: Subjectivity in Data Visualization"
+          contents:
+            - text: "Understanding"
+              href: 19_module_7_understanding.qmd
+            - text: "Application"
+              href: 20_module_7_application.qmd
+            - text: "Connection"
+              href: 21_module_7_connection.qmd
+        - section: "Module 08: Statistics and Scientific Racism"
+          contents:
+            - text: "Understanding"
+              href: 22_module_8_understanding.qmd
+            - text: "Application"
+              href: 23_module_8_application.qmd
+            - text: "Connection"
+              href: 24_module_8_connection.qmd
+        - section: "Module 09: Linear Regression"
+          contents:
+            - text: "Understanding"
+              href: 25_module_9_understanding.qmd
+            - text: "Application"
+              href: 26_module_9_application.qmd
+            - text: "Connection"
+              href: 27_module_9_connection.qmd
+        - section: "Module 10: Consequences of Failed Predictions"
+          contents:
+            - text: "Understanding"
+              href: 28_module_10_understanding.qmd
+            - text: "Application"
+              href: 29_module_10_application.qmd
+            - text: "Connection"
+              href: 30_module_10_connection.qmd
+        - section: "Module 11: Samples and Populations"
+          contents:
+            - text: "Understanding"
+              href: 31_module_11_understanding.qmd
+            - text: "Application"
+              href: 32_module_11_application.qmd
+            - text: "Connection"
+              href: 33_module_11_connection.qmd
+        - section: "Module 12: Confident About What?"
+          contents:
+            - text: "Understanding"
+              href: 34_module_12_understanding.qmd
+            - text: "Application"
+              href: 35_module_12_application.qmd
+            - text: "Connection"
+              href: 36_module_12_connection.qmd
+        - section: "Module 13: The Dangers of False Positives"
+          contents:
+            - text: "Understanding"
+              href: 37_module_13_understanding.qmd
+            - text: "Application"
+              href: 38_module_13_application.qmd
+            - text: "Connection"
+              href: 39_module_13_connection.qmd
+        - section: "Module 14: Small Stories vs. Big Data"
+          contents:
+            - text: "Understanding"
+              href: 40_module_14_understanding.qmd
+            - text: "Application"
+              href: 41_module_14_application.qmd
+            - text: "Connection"
+              href: 42_module_14_connection.qmd
+        - section: "Module 15: Reflecting on Data Science"
+          contents:
+            - text: "Understanding"
+              href: 43_module_15_understanding.qmd
+            - text: "Application"
+              href: 44_module_15_application.qmd
+            - text: "Connection"
+              href: 45_module_15_connection.qmd
 
 format:
   html:
-    theme: cosmo
-    # include-after-body: hypothesis.html
+    theme:
+      - cosmo
+      - stylesheets/quarto-theme.scss
+    css: stylesheets/quarto-extra.css
+    toc: true
+    toc-location: right
+    code-copy: true
+    link-external-newwindow: true
+    anchor-sections: true
 
 execute:
   warning: false

@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M3U: Research Paradigms and Reproducibility
 
 This chapter draws on material from:

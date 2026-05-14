@@ -60,4 +60,157 @@ if (!"skimr" %in% installed.packages()) {
 
 
 
+# LIS/ICT 661 - Introduction to Data Science
+
+Welcome to **LIS/ICT 661: Introduction to Data Science**. This site provides course content and activities to support your learning.
+
+Materials on this site may be revised or expanded as the course progresses.
+
+---
+
+## Course Modules
+
+<div class="course-module-list">
+
+<div class="course-module">
+<div class="course-module-title">Module 1: Course Syllabus</div>
+<div class="course-module-links">
+[Understanding](01_module_1_understanding.qmd) ·
+[Application](02_module_1_application.qmd) ·
+[Connection](03_module_1_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 2: The New(?) and Shiny(?) Science of Data</div>
+<div class="course-module-links">
+[Understanding](04_module_2_understanding.qmd) ·
+[Application](05_module_2_application.qmd) ·
+[Connection](06_module_2_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 3: Research Paradigms and Reproducibility</div>
+<div class="course-module-links">
+[Understanding](07_module_3_understanding.qmd) ·
+[Application](08_module_3_application.qmd) ·
+[Connection](09_module_3_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 4: The Value of Open Data</div>
+<div class="course-module-links">
+[Understanding](10_module_4_understanding.qmd) ·
+[Application](11_module_4_application.qmd) ·
+[Connection](12_module_4_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 5: Numbers Don't Speak for Themselves</div>
+<div class="course-module-links">
+[Understanding](13_module_5_understanding.qmd) ·
+[Application](14_module_5_application.qmd) ·
+[Connection](15_module_5_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 6: Unicorns, Janitors, and Rock Stars</div>
+<div class="course-module-links">
+[Understanding](16_module_6_understanding.qmd) ·
+[Application](17_module_6_application.qmd) ·
+[Connection](18_module_6_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 7: Subjectivity in Data Visualization</div>
+<div class="course-module-links">
+[Understanding](19_module_7_understanding.qmd) ·
+[Application](20_module_7_application.qmd) ·
+[Connection](21_module_7_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 8: Statistics and Scientific Racism</div>
+<div class="course-module-links">
+[Understanding](22_module_8_understanding.qmd) ·
+[Application](23_module_8_application.qmd) ·
+[Connection](24_module_8_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 9: Linear Regression</div>
+<div class="course-module-links">
+[Understanding](25_module_9_understanding.qmd) ·
+[Application](26_module_9_application.qmd) ·
+[Connection](27_module_9_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 10: Consequences of Failed Predictions</div>
+<div class="course-module-links">
+[Understanding](28_module_10_understanding.qmd) ·
+[Application](29_module_10_application.qmd) ·
+[Connection](30_module_10_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 11: Samples and Populations</div>
+<div class="course-module-links">
+[Understanding](31_module_11_understanding.qmd) ·
+[Application](32_module_11_application.qmd) ·
+[Connection](33_module_11_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 12: Confident About What?</div>
+<div class="course-module-links">
+[Understanding](34_module_12_understanding.qmd) ·
+[Application](35_module_12_application.qmd) ·
+[Connection](36_module_12_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 13: The Dangers of False Positives</div>
+<div class="course-module-links">
+[Understanding](37_module_13_understanding.qmd) ·
+[Application](38_module_13_application.qmd) ·
+[Connection](39_module_13_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 14: Small Stories vs. Big Data</div>
+<div class="course-module-links">
+[Understanding](40_module_14_understanding.qmd) ·
+[Application](41_module_14_application.qmd) ·
+[Connection](42_module_14_connection.qmd)
+</div>
+</div>
+
+<div class="course-module">
+<div class="course-module-title">Module 15: Reflecting on Data Science</div>
+<div class="course-module-links">
+[Understanding](43_module_15_understanding.qmd) ·
+[Application](44_module_15_application.qmd) ·
+[Connection](45_module_15_connection.qmd)
+</div>
+</div>
+
+</div>
+
+---
+
+## Attribution
+
 This repository is based on teaching materials originally developed by Dr. Spencer Greenhalgh, released under the Unlicense.

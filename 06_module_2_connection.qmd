@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M2C: Set up GitHub
 
 This chapter draws on material from:

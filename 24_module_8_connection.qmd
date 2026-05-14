@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M8C: Calculate Descriptive Statistics for Your Own Data
 
 You will complete the Module 8 Connection activity on Canvas. Please navigate to the corresponding discussion board and respond to the following prompt:

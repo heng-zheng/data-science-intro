@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M3A: Using Projects and Scripts in R
 
 This content draws on material from:

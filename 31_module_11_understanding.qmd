@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M11U: Samples and Populations
 
 This chapter draws on material from [Introductory Statistics](https://openstax.org/details/books/introductory-statistics) by [OpenStax](https://openstax.org/), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

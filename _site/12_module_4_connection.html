@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>module_4_connection – LIS/ICT 661 - Introduction to Data Science</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./13_module_5_understanding.html" rel="next">
+<link href="./11_module_4_application.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e1f80fdf4f2d1822162f836d66ecff9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="stylesheets/quarto-extra.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">LIS/ICT 661 - Introduction to Data Science</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-modules" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Modules</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-modules">    
+        <li>
+    <a class="dropdown-item" href="./01_module_1_understanding.html">
+ <span class="dropdown-text">Module 01</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./04_module_2_understanding.html">
+ <span class="dropdown-text">Module 02</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07_module_3_understanding.html">
+ <span class="dropdown-text">Module 03</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./10_module_4_understanding.html">
+ <span class="dropdown-text">Module 04</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./13_module_5_understanding.html">
+ <span class="dropdown-text">Module 05</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./16_module_6_understanding.html">
+ <span class="dropdown-text">Module 06</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./19_module_7_understanding.html">
+ <span class="dropdown-text">Module 07</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./22_module_8_understanding.html">
+ <span class="dropdown-text">Module 08</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./25_module_9_understanding.html">
+ <span class="dropdown-text">Module 09</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./28_module_10_understanding.html">
+ <span class="dropdown-text">Module 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./31_module_11_understanding.html">
+ <span class="dropdown-text">Module 11</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./34_module_12_understanding.html">
+ <span class="dropdown-text">Module 12</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./37_module_13_understanding.html">
+ <span class="dropdown-text">Module 13</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./40_module_14_understanding.html">
+ <span class="dropdown-text">Module 14</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./43_module_15_understanding.html">
+ <span class="dropdown-text">Module 15</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./01_module_1_understanding.html" aria-current="page"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_module_4_understanding.html">Module 04: The Value of Open Data</a></li><li class="breadcrumb-item"><a href="./12_module_4_connection.html">Connection</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 01: Course Syllabus</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_module_1_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_module_1_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_module_1_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 02: The New(?) and Shiny(?) Science of Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_module_2_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_module_2_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_module_2_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 03: Research Paradigms and Reproducibility</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_module_3_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_module_3_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_module_3_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 04: The Value of Open Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_module_4_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_module_4_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_module_4_connection.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 05: Numbers Don’t Speak for Themselves</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_module_5_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_module_5_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_module_5_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 06: Unicorns, Janitors, and Rock Stars</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_module_6_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17_module_6_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18_module_6_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 07: Subjectivity in Data Visualization</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19_module_7_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20_module_7_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_module_7_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 08: Statistics and Scientific Racism</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_module_8_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23_module_8_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24_module_8_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 09: Linear Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./25_module_9_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./26_module_9_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./27_module_9_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 10: Consequences of Failed Predictions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./28_module_10_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./29_module_10_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30_module_10_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 11: Samples and Populations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31_module_11_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./32_module_11_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./33_module_11_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 12: Confident About What?</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./34_module_12_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./35_module_12_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./36_module_12_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 13: The Dangers of False Positives</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./37_module_13_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./38_module_13_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./39_module_13_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 14: Small Stories vs.&nbsp;Big Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40_module_14_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./41_module_14_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./42_module_14_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 15: Reflecting on Data Science</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./43_module_15_understanding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./44_module_15_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./45_module_15_connection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#m4c-show-your-work" id="toc-m4c-show-your-work" class="nav-link active" data-scroll-target="#m4c-show-your-work">M4C: Show Your Work</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#invisible-labor" id="toc-invisible-labor" class="nav-link" data-scroll-target="#invisible-labor">Invisible Labor</a></li>
+  <li><a href="#the-invisible-labor-of-data-science" id="toc-the-invisible-labor-of-data-science" class="nav-link" data-scroll-target="#the-invisible-labor-of-data-science">The Invisible Labor of Data Science</a></li>
+  <li><a href="#time-and-money" id="toc-time-and-money" class="nav-link" data-scroll-target="#time-and-money">Time and Money</a></li>
+  <li><a href="#crediting-data-work" id="toc-crediting-data-work" class="nav-link" data-scroll-target="#crediting-data-work">Crediting Data Work</a></li>
+  <li><a href="#crediting-emotional-labor-and-care-work" id="toc-crediting-emotional-labor-and-care-work" class="nav-link" data-scroll-target="#crediting-emotional-labor-and-care-work">Crediting Emotional Labor and Care Work</a></li>
+  <li><a href="#show-your-work" id="toc-show-your-work" class="nav-link" data-scroll-target="#show-your-work">Show Your Work</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_module_4_understanding.html">Module 04: The Value of Open Data</a></li><li class="breadcrumb-item"><a href="./12_module_4_connection.html">Connection</a></li></ol></nav></header>
+
+
+
+
+<section id="m4c-show-your-work" class="level1">
+<h1>M4C: Show Your Work</h1>
+<p>This chapter draws on material from <a href="https://data-feminism.mitpress.mit.edu/pub/0vgzaln4/release/3">7. Show Your Work</a> by <a href="http://www.kanarinka.com/">Catherine D’Ignazio</a> and <a href="https://lklein.com/">Lauren Klein</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+<p>Changes to the source material include light editing, adding new material, deleting original material, rearranging material, changing the citation style, adding links, replacing images, changing original authors’ voice to third person, and adding first-person language from current author.</p>
+<p>The resulting content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Earlier this semester, each of you set up an account with GitHub. As of June 2018, this online code-management platform had over twenty-eight million users worldwide. By allowing users to create web-based repositories of source code (among other forms of content) to which project teams of any size can then contribute, GitHub makes collaborating on a single piece of software or a website or even a book much easier than it has ever been before (this book is hosted in GitHub, as is a book on <a href="https://datascienceineducation.com/">data science in education</a> written by my friend Josh and his co-authors).</p>
+<p>Unfortunately, though, there’s a gender dynamic present to this “much easier.” A 2016 study found that female GitHub users were less likely to have their contributions accepted if they identified themselves in their user profiles as women. The authors do not appear to have considered nonbinary genders, although they do maintain a category for “gender-neutral” usernames that cannot be categorized as either men’s or women’s names (Terrell et al,. 2017). Critics of GitHub’s commitment to inclusivity, or the lack thereof, also point to the company’s internal politics. In 2014, GitHub’s cofounder was forced to resign after allegations of sexual harassment were brought to light (Miller, 2014). More recently, in 2018, Agnes Pak, a former top attorney at GitHub, sued the company for allegedly altering her performance reviews after she complained about her gender and race contributing to a lower compensation package, giving them the grounds to fire her (Baron, 2018). Pak’s suit came shortly after transgender software developer Coraline Ada Ehmke declined a significant severance package in 2017 so that she could talk publicly about her negative experience of working at GitHub (Ehmke, 2017). Clearly, GitHub has several major issues of corporate culture that it must address.</p>
+<p>But a corporate culture that is hostile to women does not necessarily preclude other feminist interventions, and GitHub makes one important one: Its platform helps show the work of writing collaborative code. In addition to basic project management tools, like bug tracking and feature requests, the GitHub platform also generates visualizations of each team member’s contributions to a project’s codebase. Area charts, arranged in small multiples, allow viewers to compare the quantity, frequency, and duration of any particular member’s contributions. A line graph reveals patterns in the day of the week when those contributions took place. And a flowchart-like diagram of the relationships between various branches of the project’s code helps to acknowledge any sources for the project that might otherwise go uncredited, as well as any additional projects that might build upon the project’s initial work.</p>
+<p>Coding is work, as anyone who’s ever programmed anything knows well. But it’s not always work that is easy to see. The same is true for collecting, analyzing, and visualizing data. We tend to marvel at the scale and complexity of an interactive visualization like the <a href="https://www.shipmap.org/">Ship Map</a>, which plots the paths of the global merchant fleet over the course of the 2012 calendar year. By showing every single sea voyage, the Ship Map exposes the networks of waterways that constitute our global product supply chain. However, we are less often exposed to the networks of processes and people that help constitute the visualization itself—from the seventy-five corporate researchers at Clarksons Research UK who assembled and validated the underlying dataset, to the academic research team at University College London institute that developed the data model, to the design team at Kiln that transformed the data model into the visualization that we see. And that is to say nothing of the tens of thousands of commercial ships that served as the source of data in the first place. Visualizations like the Ship Map involve the work of many hands.</p>
+<p>Unfortunately, however, when releasing a data product to the public, we tend not to credit the many hands who perform this work. We often cite the source of the dataset, and the names of the people who designed and implemented the code and graphic elements. But we rarely dig deeper to discover who created the data in first place, who collected the data and processed them for use, and who else might have labored to make creations like the Ship Map possible. Admittedly, this information is sometimes hard to find. Likewise, when project teams (or individuals) are already operating at full capacity, or under budgetary strain, this information can—ironically—simply be too much additional work to pursue (see Martin, 2010). Even in cases in which there are both resources and desire, information about the range of the contributors to any particular project sometimes can’t be found at all.</p>
+</section>
+<section id="invisible-labor" class="level2">
+<h2 class="anchored" data-anchor-id="invisible-labor">Invisible Labor</h2>
+<p>But the various difficulties we encounter when trying to acknowledge this work reflects a larger problem in what information studies scholar Miriam Posner (2018) calls our data supply chain. Like the contents of the ships visualized on the Ship Map, about which we only know sparse details—the map can tell us if a shipping container was loaded onto the boat, but not what the shipping container contains—the invisible labor involved in data work, as Posner argues, is something that corporations have an interest in keeping out of public view.</p>
+<p>To put it more simply, it’s not a coincidence that much of the work that goes into designing a data product—visualization, algorithm, model, app—remains invisible and uncredited. In our capitalist society, we tend to value work that we can see. This is the result of a system in which the cultural worth of any particular form of work is directly connected to the price we pay for it; because a service costs money, we recognize its larger value. More often than not, though, the reverse also holds true: We fail to recognize the larger value of the services we get for free.</p>
+<p>When, in the early 1970s, the International Feminist Collective launched the Wages for Housework campaign, it was this phenomenon of <em>invisible labor</em>—labor that was unpaid and therefore unvalued—that the group was trying to expose (see Federici, 1975). The precise term they used to describe this work was <em>reproductive labor</em>, which comes from the classical economic distinction between the paid and therefore economically <em>productive</em> labor of the marketplace, and the unpaid and therefore economically <em>unproductive</em> labor of everything else. By reframing this latter category of work as <em>reproductive</em> labor, rather than simply (and inaccurately) unproductive labor, groups like the International Feminist Collective sought to emphasize how the range of tasks that the term encompassed, like cooking and cleaning and child-rearing, were precisely the tasks that enabled those who performed “productive” labor, like office or factory work, to continue to do so.</p>
+<p>The Wages for Housework movement began in Italy and migrated to the United States with the help of labor organizer and theorist Silvia Federici. It eventually claimed chapters in several American cities, and did important consciousness-raising work. Still, as prominent feminists like Angela Davis pointed out, while housework might have been unpaid for White women, women of color—especially Black women in the United States—had long been paid, albeit not well, for their housework in other people’s homes: “Because of the added intrusion of racism, vast numbers of Black women have had to do their own housekeeping and other women’s home chores as well” (Davis, 1983).</p>
+<p>Here, Davis is making an important point about racialized labor: just as housework is structured along the lines of gender, it is also structured along the lines of race and class. The domestic labor of women of color was and remains underwaged labor, as feminist labor theorists would call it, and its low cost was what permitted (and continues to permit) many White middle- and upper-class women to participate in the more lucrative waged labor market instead.</p>
+<p>Since the 1970s, the term <em>invisible labor</em> has come to encompass the various forms of labor, unwaged, underwaged, and even waged, that are rendered invisible because they take place inside of the home, because they take place out of sight, or because they lack physical form altogether. Visit this Internet Archive capture of the now-defunct <a href="https://web.archive.org/web/20240121144310/http://wagesforfacebook.com/">WagesforFacebook.com</a> and you’ll find a version of the Wages for Housework argument updated for a new form of invisible work.</p>
+<p>This invisible labor can be found all over the web, as digital labor theorists such as Tiziana Terranova (2000) have helped us to understand. “They call it sharing. We call it stealing,” is one of the statements that scrolls down the screen in large black type. The word <em>it</em> refers to work that most of us perform every day, in the form of our Facebook likes, Instagram posts, and Twitter tweets. The point made by Laurel Ptak, the artist behind Wages for Facebook—a point also made by Terranova—is that the invisible unpaid labor of our likes and tweets is precisely what enables the Facebooks and Twitters of the world to profit and thrive.</p>
+</section>
+<section id="the-invisible-labor-of-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="the-invisible-labor-of-data-science">The Invisible Labor of Data Science</h2>
+<p>The world of data science is able to profit and thrive because of unpaid invisible labor as well. Perhaps my “favorite” example of this is from the very geeky xkcd webcomic, which once ran the following comic:</p>
+<p><img src="https://imgs.xkcd.com/comics/self_driving.png" class="img-fluid"></p>
+<p><a href="https://xkcd.com/1897/">Self Driving</a> by <a href="https://xkcd.com/">Randall Munroe</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a></p>
+<p>Have you ever wondered why these distinctive <a href="https://en.wikipedia.org/wiki/CAPTCHA">CAPTCHA</a> tests require you to do image identification? Or why they’re so often related to roads, signs, and vehicles? The idea behind a CAPTCHA test is to require a human to do a task that an automated system can’t do. That’s a pretty good way of telling a human from an automated system! Ironically, though, those aggregated human tasks are often used to train automated systems to work better. Google (who owns the popular <a href="https://en.wikipedia.org/wiki/ReCAPTCHA">reCAPTCHA</a> system) uses CAPTCHA tests to train systems for automated image recognition—which has obvious benefits if you’re developing self-driving cars.</p>
+<p>Ever since reading this comic, I’ve gotten angry whenever I complete one of these. Not only does such-and-such a website believe that I’m a robot, but the only way to prove my humanity is to do free work for Google. All I get out of it is to continue to the website I want, but Google is in a position to make gobs of money based on my (and millions of others’) free labor.</p>
+<p>Other <em>crowdsourcing</em> projects (helping Netflix with its recommendation algorithm, helping a newspaper go through interesting documents, etc.) are framed as acts of benevolence (and, in the case of Netflix, an opportunity to win a million-dollar prize). People should want to contribute to these projects, their proponents claimed, since their labor would further the public good. It’s also worth pointing out, though, that when he coined the term in the mid-2000s, Jeff Howe argued that crowdsourcing was a powerful way to tap networked knowledge for corporate use. “The labor isn’t always free, but it costs a lot less than paying traditional employees,” he wrote (Howe, 2006).</p>
+<p>Plus, Ashe Dryden, the software developer and diversity consultant, points out that people can only help crowdsource if they have the inclination and the time (Dryden, 2014). Think back to that study of GitHub. If you were a woman and you knew your contributions to a programming project were less likely to be accepted than if you were a man, would that motivate you to contribute the project?</p>
+<p>Or, for another example, consider Wikipedia. Although the exact gender demographics of Wikipedia contributors are unknown, numerous surveys have indicated that those who contribute content to the crowdsourced encyclopedia are between 84 percent and 91.5 percent men (Hills &amp; Shaw, 2013; Wikimedia, n.d.). Why? It could be that there, too, edits are less likely to be accepted if they come from women editors (Whose Knowledge, n.d.). It could also be attributed to Wikipedia’s exclusionary editing culture and technological infrastructure, as science and technology studies (STS) scholars Heather Ford and Judy Wajcman (2017) have argued. And there is also reason to go back to the housework argument. Dryden cites a 2011 study showing that women in twenty-nine countries spend more than twice as much time on household tasks than men do, even when controlling for women who hold full-time jobs (Miranda, 2011). Like the other estimates of gender cited here, the study did not consider nonbinary genders or same-sex (or other non-heterotypical) households. But even as a rough estimate, it seems that women simply don’t have as much time.</p>
+</section>
+<section id="time-and-money" class="level2">
+<h2 class="anchored" data-anchor-id="time-and-money">Time and Money</h2>
+<p>In capitalist societies, it’s very often the case that time is money. But it’s also important to remember to ask whose time is being spent and whose money is being saved. The premise behind Amazon’s Mechanical Turk—or MTurk, as the crowdsourcing platform is more commonly known—is that data scientists want to save their own time and their own bottom line. The MTurk website touts its access to a global marketplace of “on-demand Workers,” who are advertised as being more “scalable and cost-effective” than the “time consuming [and] expensive” process of hiring actual employees (Amazon Mechanical Turk, n.d.)</p>
+<p>Thus, MTurk is a marketplace for crowdsourced human labor—individuals and businesses that have “human intelligence tasks” can set up jobs for online workers to complete. Often repetitive, like describing images or taking surveys, the jobs are compensated in tiny financial increments that don’t add up to a minimum hourly wage—not to mention a living wage. However, a recent study by the Pew Research Center showed that 51 percent of US-based Turkers, as they are known, hold college degrees, and 88 percent are below the age of fifty, among other metrics that would otherwise rank them among the most desired demographic for salaried employees (Hitlin, 2016).</p>
+<p>This form of underwaged work is also increasingly outsourced from the United States to countries with fewer (or worse) labor laws and fewer (or worse) opportunities for economic advancement. A 2010 University of California, Irvine study measured a 20 percent drop in the number of US-based Turkers over the eighteen months that it monitored (Ross et al., 2010). This trend has continued, the real-time MTurk tracker shows. (The gender split, interestingly, has evened out over time.)</p>
+<p>Even at resource-rich companies like Amazon and Google, the work of data entry is profoundly undervalued in proportion to the knowledge it helps to create. Andrew Norman Wilson’s 2011 documentary <a href="https://vimeo.com/15852288">Workers Leaving the Googleplex</a> exposes how the workers tasked with scanning the books for the Google Books database are hired as a separate but unequal class of employee, with ID cards that restrict their access to most of the Google campus and that prevent them from enjoying the company’s famed employee perks.</p>
+</section>
+<section id="crediting-data-work" class="level2">
+<h2 class="anchored" data-anchor-id="crediting-data-work">Crediting Data Work</h2>
+<p>The emphasis on giving formal credit for a broad range of work derives from feminist practices of citation. Feminist theorist Sara Ahmed describes this practice as a way of resisting how certain types of people—usually cis and White and male—“take up spaces by screening out others” (Ahmed, 2013). When those other people are screened out, they become invisible, and their contributions go unrecognized. The <em>screening techniques</em> (as Ahmed terms them) that lead to their erasure are not always intentional, but they are, unfortunately, self-perpetuating. Ahmed gives the example of sinking into a leather armchair that is comfortable because it’s molded to the shape of your body over time. You probably wouldn’t notice how the chair would be uncomfortable for those who haven’t spent time sitting in it—those with different bodies or with different demands on their time. Which is why those of us who occupy those comfortable leather seats—or, more likely in the design world, molded plastic Eames chairs—must remain vigilant in reminding ourselves of the additional forms of labor, and the additional people, that our own data work rests upon.</p>
+<p>This gets complicated quickly even on the scale of a single data science project. The names of all the people and the work they perform are not always easy to locate—if they can be located at all. But taking steps to document all the people who work on a particular project at the time that it is taking place can help to ensure that a record of that work remains after the project has been completed. In fact, this is among the four core principles that comprise the Collaborators’ Bill of Rights, a document developed by an interdisciplinary team of librarians, staff technologists, scholars, and postdoctoral fellows in 2011 in response to the proliferation of types of positions, at widely divergent ranks, that were being asked to contribute to data-based (and other digital) projects (“Collaborators’ Bill of Rights”, 2011; see also Di Pressi et al., 2018).</p>
+<p>When designing data products from a feminist perspective, we must similarly aspire to show the work involved in the entire lifecycle of the project. This remains true even as it can be difficult to name each individual involved or when the work may be collective in nature and not able to be attributed to a single source. In these cases, we might take inspiration from the Next System Project, a research group aimed at documenting and visualizing alternative economic systems (Gibson-Graham &amp; the Community Economies Collective, 2017). In one report, the group compiled information on the diversity of community economies operating in locations as far-ranging as Negros Island, in the Philippines; Québec province, in Canada; and the state of Kerala, in India. The report employs the visual metaphor of an iceberg, in which wage labor is positioned at the tip of the iceberg, floating above the water, while dozens of other forms of labor—informal lending, consumer cooperatives, and work within families, among others—are positioned below the water, providing essential economic ballast but remaining out of sight.</p>
+<p>But in more instances than you might think, the labor associated with data work can be surfaced through the data themselves. For instance, historian Benjamin Schmidt (2017), whose research centers on the role of government agencies in shaping public knowledge, decided to visualize the metadata associated with the digital catalog of the US Library of Congress, the largest library in the world. Schmidt’s initial goal was to understand the collection and the classification system that structured the catalog. But in the process of visualizing the catalog records, he discovered something else: a record of the labor of the cataloguers themselves. When he plotted the year that each book’s record was created against the year that the book was published (you can see the plot <a href="https://4.bp.blogspot.com/-d38P9An3g80/WRt7LiGNGjI/AAAAAAAAIdM/B7Tne8WH3C0ch3Vn35TChvSQ9SwllMSQwCLcB/s1600/MARC.png">here</a>), he saw some unusual patterns in the image: shaded vertical lines, step-like structures, and dark vertical bands that didn’t match up with what one might otherwise assume would be a basic two-step process of (1) acquire a book and (2) enter it in.</p>
+<p>The shaded vertical lines, Schmidt soon realized, showed the point at which the cataloguers began to turn back to the books that had been published before the library went digital, filling in the online catalogue with older books. The step-like patterns indicated the periods of time, later in the process, when the cataloguers returned to specific subcollections of the library, entering in the data for the entire set of books in a short period of time. And the horizontal lines? Well, given that they appear only in the years 1800 and 1900, Schmidt inferred that they indicated missing publication information, as best practices for library cataloguing dictate that the first year of the century be entered when the exact publication date is unknown.</p>
+<p>With an emphasis on showing the work, these visual artifacts should also prompt us to consider just how much physical work was involved in converting the library’s paper records to digital form. The darker areas of the chart don’t just indicate a larger number of books entered into the catalog, after all. They also indicate the people who typed them all in. (Schmidt estimates the total number of records at ten million and growing.) Similarly, the step-like formations don’t just indicate a higher volume of data entry. They indicate strategic decisions made by library staff to return to specific parts of the collection and reflect those staff members’ prior knowledge of the gaps that needed to be filled—in other words, their intellectual labor as well. Schmidt’s visualization helps to show how the dataset always points back to the <em>data setting</em>—to use Yanni Loukissas’s helpful phrase—as well as to the people who labored in that setting to produce the data that we see.</p>
+</section>
+<section id="crediting-emotional-labor-and-care-work" class="level2">
+<h2 class="anchored" data-anchor-id="crediting-emotional-labor-and-care-work">Crediting Emotional Labor and Care Work</h2>
+<p>In addition to the invisible labor of data work, there is also labor that remains hidden because we are not trained to think of it as labor at all. This is what is known as emotional labor, and it’s another form of work that feminist theory has helped to bring to light. As described by feminist sociologist Arlie Hochschild (2012), <em>emotional labor</em> describes the work involved in managing one’s feelings, or someone else’s, in response to the demands of society or a particular job. Hochschild coined the term in the late 1970s to describe the labor required of service industry workers, such as flight attendants, who are required to manage their own fear while also calming passengers during adverse flight conditions, and generally work to ensure that flight passengers feel cared for and content. In the decades that followed, the notion of emotional labor was supplemented by a related concept, <em>affective labor</em>, so that the work of projecting a feeling (the definition of emotion) could be distinguished from the work of experiencing the feeling itself (the definition of affect).</p>
+<p>We can see both emotional and affective labor at work all across the technology industry today. Consider, for instance, how call center workers and other technical support specialists must exert a combination of affective and emotional labor, as well as technical expertise, to absorb the rage of irate customers (affective labor), reflect back their sympathy (emotional labor), and then help them with—for instance—the configuration of their wireless router (technical expertise; see Brophy &amp; Woodcock, 2019). In the workplace, we might also consider the affective labor required by women and minoritized groups, in all situations, who must take steps to disprove (or simply ignore) the sexist, racist, or otherist assumptions they face—about their technical ability or about anything else. And they must do so while also performing the emotional labor that ensures that they do not threaten those who hold those assumptions, who often also hold positions of power over them. Are there ways to visualize these forms of labor, giving visual presence—and therefore acknowledgement and credit—to these outlays of work?</p>
+</section>
+<section id="show-your-work" class="level2">
+<h2 class="anchored" data-anchor-id="show-your-work">Show Your Work</h2>
+<p>Data work is part of a larger ecology of knowledge, one that must be both sustainable and socially just. Like the ship paths visualized on the Ship Map or the source code stored on GitHub, the network of people who contribute to data projects is vast and complex. Showing this work is an essential component of feminist data science. An emphasis on labor opens the door to the interdisciplinary area of data production studies: taking a data visualization, model, or product and tracing it back to its material conditions and contexts, as well as to the quality and character of the work and the people required to make it. This kind of careful excavation can be undertaken in academic, journalistic, or general contexts, in all cases helping to make more clearly visible—and therefore to value—the work that data science rests upon.</p>
+<p>We can also look to the data themselves in order to honor the range of forms of invisible labor involved in data science. Who is credited on each project? Whose work has been “screened out”? While one strategy is to show the work behind making data products themselves, another strategy for honoring work of all forms is to use data science to show the work of people (mostly women) who labor in other sectors of the economy, those that involve emotional labor, domestic work, and care work. Designing in solidarity with domestic workers can begin to challenge the structural inequalities that relegate their work to the margins in the first place.</p>
+<p>This point brings us back to ideas about power that we will read about throughout this semester. Power imbalances are everywhere in data science: in our datasets, in our data products, and in the environments that enable our data work. Showing the work is crucial to ensure that undervalued and invisible labor receives the credit it deserves, as well as to understand the true cost and planetary consequences of data work.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Ahmed, S. (2013, September 11). Making feminist points. <em>Feministkilljoys</em> [blog]. https://feministkilljoys.com/2013/09/11/making-feminist-points/</p>
+<p>Amazon Mechanical Turk. (n.d.). https://www.mturk.com/ (accessed April 22, 2019).</p>
+<p>Baron, E. (2018, October 1) GitHub paid executive less because she’s Asian and female, fired her for complaining: Lawsuit. <em>Mercury News</em>. https://www.mercurynews.com/2018/10/01/github-paid-executive-less-because-shes-asian-and-female-fired-her-for-complaining-lawsuit/</p>
+<p>Brophy, E., &amp; Woodcock, J. (2019, February 14). The call centre seen from below: Issue 4.3 editorial. <em>Notes from Below</em>. https://notesfrombelow.org/article/call-centre-seen-below-issue-43-editorial</p>
+<p>“Collaborators’ Bill of Rights.” (2011). In <em>Off the tracks: Laying new lines for digital humanities scholars</em>. MediaCommons.</p>
+<p>Davis, A. (1983). <em>Women, race, &amp; class</em>. Penguin Random House.</p>
+<p>Di Pressi, H., Gorman, S., Posner, M., Sasayma, R., &amp; Schmitt (with contributions from R. Crooks, M. Driscoll, A. Earhart, S. Keralis, T. Naiman, &amp; T. Presner). (2018, June 8). <em>A student collaborators’ bill of rights</em>. https://humtech.ucla.edu/news/a-student-collaborators-bill-of-rights/</p>
+<p>Dryden, A. (2014, April 29). <em>Programming diversity</em>. Talk at Mix-IT, Lyon, France. https://www.ashedryden.com/mixit-programming-diversity</p>
+<p>Ehmke, C. A. (2017, July 5). Antisocial coding: My year at GitHub. <em>Coraline Ada Ehmke</em> [blog]. https://where.coraline.codes/blog/my-year-at-github/</p>
+<p>Federici, S. (1975). <em>Wages against housework</em>. Power of Women Collective and Falling Water Press.</p>
+<p>Ford, H., &amp; Wajcman, J. (2017). “Anyone can edit”, not everyone does: Wikipedia’s infrastructure and the gender gap. <em>Social Studies of Science</em>, <em>47</em>(4), 511-527.</p>
+<p>Gibson-Graham, J. K., &amp; the Community Economies Collective. (2017, February 27). <em>Cultivating Community Economies</em>. Next System Project. https://thenextsystem.org/cultivating-community-economies</p>
+<p>Hill, B. M., &amp; Shaw, A. (2013). The Wikipedia gender gap revisited: Characterizing survey response bias with propensity score estimation. <em>PLOS One</em>, <em>8</em>(6), 1-5.</p>
+<p>Hitlin, P. (2016, July 11). Research in the crowdsourcing age, a case study. <em>Pew Research Center: Internet &amp; Technology</em>. https://www.pewresearch.org/internet/2016/07/11/research-in-the-crowdsourcing-age-a-case-study/</p>
+<p>Hochschild, A. R. (2012). <em>The managed heart: Commercialization of human feeling</em> (3rd ed.). University of California Press.</p>
+<p>Howe, J. (2006, January 6). The rise of crowdsourcing. <em>WIRED</em>. https://www.wired.com/2006/06/crowds/</p>
+<p>Martin, J. L. (2010). Life’s a beach but you’re an ant, and other unwelcome news for the sociology of culture. <em>Poetics</em>, <em>38</em>(2), 229-244.</p>
+<p>Miller, C. C. (2014, April 21). Github founder resigns after investigation. New York Times. https://archive.nytimes.com/bits.blogs.nytimes.com/2014/04/21/github-founder-resigns-after-investigation/</p>
+<p>Miranda, V. (2011). Cooking, caring and volunteering: Unpaid work around the world. <em>OECD Social, Employment and Migration Papers</em>, <em>116</em>. https://www.oecd.org/berlin/47258230.pdf</p>
+<p>Posner, M. (2018, April). See no evil. <em>Logic Magazine</em>. https://logicmag.io/scale/see-no-evil/</p>
+<p>Ross, J., Irani, L., Silberman, M. S., Zaldivar, A., &amp; Tomlinson, B. Who are the crowdworkers? Shifting demographics in Mechanical Turk. In <em>CHI 2010: Imagine All the People</em> (pp.&nbsp;2863-2872).</p>
+<p>Schmidt, B. M. (2017, May 16). A brief visual history of MARC cataloging at the Library of Congress. <em>Sapping Attention</em> [blog]. http://sappingattention.blogspot.com/2017/05/a-brief-visual-history-of-marc.html</p>
+<p>Terranova, T. (2000). Free labor: Producing culture for the digital economy. <em>Social Text</em>, <em>18</em>(2), 33-58.</p>
+<p>Terrell, J., Kofink, A., Middleton, J., Rainear, C., Murphy-Hill, E., Parnin, C., &amp; Stallings, J. (2017). Gender differences and bias in open source: Pull request acceptance of women versus men. <em>PeerJ Computer Science</em>, <em>3</em>(e111).</p>
+<p>Whose Knowledge. (n.d.). <em>#VisibleWikiWomen 2019</em>. https://whoseknowledge.org/initiatives/visiblewikiwomen-2019/</p>
+<p>Wikimedia. (n.d.). <em>Editor Survey 2011/Executive Summary</em>. https://meta.wikimedia.org/wiki/Editor_Survey_2011/Executive_Summary</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/heng-zheng\.github\.io\/data-science-intro\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./11_module_4_application.html" class="pagination-link" aria-label="Application">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Application</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./13_module_5_understanding.html" class="pagination-link" aria-label="Understanding">
+        <span class="nav-page-text">Understanding</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

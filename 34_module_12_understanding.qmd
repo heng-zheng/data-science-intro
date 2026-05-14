@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M12U: Confident About What?
 
 This chapter draws on material from [Introduction: #TravelingWhileTrans, Design Justice, and Escape from the Matrix of Domination](https://designjustice.mitpress.mit.edu/pub/ap8rgw5e/release/1), by [Sasha Costanza-Chock](https://www.schock.cc/), licensed under CC BY 4.0

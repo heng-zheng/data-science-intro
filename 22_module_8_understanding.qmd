@@ -1,3 +1,7 @@
+---
+sidebar: modules
+---
+
 # M8U: Statistics and Scientific Racism
 
 This chapter draws on material from:
