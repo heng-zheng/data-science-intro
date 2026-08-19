@@ -90,14 +90,14 @@ Note the three *panes* which are three panels dividing the screen: the *console 
 
 Now that you're set up with R and RStudio, you are probably asking yourself, "OK. Now how do I use R?". The first thing to note is that unlike other statistical software programs like Excel, SPSS, or Minitab that provide [point-and-click](https://en.wikipedia.org/wiki/Point_and_click) interfaces, R is an [interpreted language.](https://en.wikipedia.org/wiki/Interpreted_language) This means you have to type in commands written in *R code*. In other words, you have to code/program in R. Note that I'll use the terms "coding" and "programming" interchangeably in this book.
 
-It is tempting to think that point-and-click software is superior to software that requires you to write your own code. We’re used to thinking of point-and-click software as newer and more modern than writing text commands! However, writing your own code typically gives you more control and power over what your software is doing; plus, by asking you to be more involved in the statistical analysis, it actually encourages you to learn more along the way. Speaking personally, I found that I learned a lot more about statistical analysis once I started using R than I had when I was using point-and-click interfaces.
+It is tempting to think that point-and-click software is superior to software that requires you to write your own code. We’re used to thinking of point-and-click software as newer and more modern than writing text commands! However, writing your own code typically gives you more control and power over what your software is doing; plus, by asking you to be more involved in the statistical analysis, it actually encourages you to learn more along the way. Working with code can also support a deeper understanding of statistical analysis than relying on point-and-click interfaces alone.
 
 While it is not required to be a seasoned coder/computer programmer to use R, there is still a set of basic programming concepts that new R users need to understand. Consequently, while this book is not a book on programming, you will still learn just enough of these basic programming concepts needed to explore and analyze data effectively.
 
 
 ### Basic programming concepts and terminology {#sec-programming-concepts}
 
-In my opinion and experience, completing actual projects in R does much more to help you learn the software than a written description. So, rather than ask you to memorize terms and concepts, I’ll ask you throughout the semester to complete walkthroughs (like this one) so that you’ll “learn by doing.” One important thing to help you with any of these walkthroughs is text formatting: I will always use a different font to distinguish regular text from `computer_code`. 
+Completing actual projects in R can be more helpful for learning the software than reading written descriptions alone. Rather than asking you to memorize terms and concepts, this course uses walkthroughs (like this one) so that you can “learn by doing.” To help with these walkthroughs, a different font distinguishes regular text from `computer_code`.
 
 That said, it can be helpful to lay out some basic definitions and describe some basic concepts; don't worry about committing all of this to memory, but you can come back here for clarification if you aren't sure what a term means later on.
 
@@ -184,7 +184,7 @@ Let's perform these two steps for the `ggplot2` package for data visualization.
 
 ### Package installation {#sec-package-installation}
 
-There are two ways to install an R package: an easy way and a more advanced way. I am going to be rude and not teach you the easy way! My reason for this is that for our class projects, you **have** to load things the more advanced way, so you might as well get into the habit now.
+There are two ways to install an R package: an easy way and a more advanced way. This course uses the more advanced method because class projects require you to use it, so it is helpful to establish that habit now.
 
 The recommended way to install a package is by typing `install.packages("ggplot2")` in the console pane of RStudio and pressing Return/Enter on your keyboard. Note you must include the quotation marks around the name of the package.
 
