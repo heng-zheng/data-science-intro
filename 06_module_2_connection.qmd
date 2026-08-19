@@ -52,7 +52,7 @@ First things first, head on over to [github.com](https://github.com) and create 
 
 In this next section, I've tried to be as specific as possible in providing instructions. However, past experience has shown me that what I see on my computer while walking through these steps isn't always exactly what other people see due to operating system or other differences. If something doesn't match perfectly what you see, use common sense to figure out the next best option.
 
-Once you've created a GitHub account, please navigate to [this GitHub repository](https://github.com/greenhas/ICT_LIS_661_2025), which contains some crucial files for our class. If you have your browser window open wide enough, you should see a green *Use this template* button to the right of the menu above the list of files and directories (or folders). Click that button and, if prompted, click on *Create a new repository*. 
+Once you've created a GitHub account, please navigate to [this GitHub repository](https://github.com/hengzheng-uky/LIS-ICT-661), which contains some crucial files for our class. If you have your browser window open wide enough, you should see a green *Use this template* button to the right of the menu above the list of files and directories (or folders). Click that button and, if prompted, click on *Create a new repository*. 
 
 The next interface has a few different sections in it. You can ignore the first few options and then go down to where it says *Owner*: Make sure it lists your username there! 
 
@@ -60,13 +60,13 @@ If/as you continue to work with RStudio and GitHub, you'll get a feel for what k
 
 `yourlastname_yourfirstname_661`
 
-That is, my project would be named `Greenhalgh_Spencer_661`.
+That is, my project would be named `Zheng_Heng_661`.
 
 You can skip the *Description* line, but make sure to set your repository to *Private*. This is important so that your homework for this class isn't publicly accessible!
 
 Once you've finished all the steps on this interface, GitHub will take you to the page for your repository. Find the *Settings* button near the top right of the page (if you can't see it, you may need to make your browser window larger), and click on that.
 
-Once you're in settings, navigate to *Collaborators* and then *Add people*. Then, enter my GitHub username, `greenhas`. Having access to your repository will make helping you with your code much easier in the future!
+Once you're in settings, navigate to *Collaborators* and then *Add people*. Then, enter my GitHub username, `hengzheng-uky`. Having access to your repository will make helping you with your code much easier in the future!
 
 ### Installing GitHub Desktop
 

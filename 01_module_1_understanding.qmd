@@ -4,37 +4,25 @@ sidebar: modules
 
 # M1U: Course Syllabus
 
-The syllabus for this course is available as a PDF through Canvas. However, it is also reproduced here for the purposes of annotation.
+The syllabus for this course is available as a PDF through Canvas. However, it is also reproduced here for reference and discussion.
 
 ## Overview
 
 ### Course
 
-ICT/LIS 661-201: Introduction to Data Science
+LIS/ICT 661: Introduction to Data Science
 
-### Instructor
+### Instructor Information
 
-Heng Zheng, PhD
-
-### Contact Information
-
-* *Office*—317 Lucille Little Library Bldg.
-* *Email*—hengzheng@uky.edu (**preferred**)
-* *Zoom*—[https://uky.zoom.us/my/greenhalgh](https://uky.zoom.us/my/greenhalgh)
-
-### Response Time
-
-During the work week (but not the weekend!), I commit to respond to all emails within 24 hours. I expect you to regularly check Canvas and email for messages from me and to respond quickly.
-
-### Office Hours
-
-I will hold office hours in person or on Zoom (see above):
-
-* Wednesday, 9am to 11am
-* Thursday, 1pm to 3pm, or
-* by appointment
-
-While you are free to come by without an appointment, I suggest that you let me know when you plan to come to office hours.
+- Name: Heng Zheng, PhD
+- Office location: Room 317, Lucille Little Library
+- UKY email address: hengzheng@uky.edu 
+- Microsoft Teams: hengzheng@uky.edu - preferred method of contact
+- Office hours: Thursdays from 11:00 AM to 1:00 PM. 
+    - Meetings are on Microsoft Teams by default [https://teams.microsoft.com/meet/233062564011475](https://teams.microsoft.com/meet/233062564011475).
+    - If the scheduled office hours do not work for you, please send me a Teams message or email so we can schedule a time that works with your schedule. Please remember to email me at least 24 hours in advance, so I can set up the virtual meeting and invite you to join it. More information for using Microsoft Teams can be found [here](https://uky.service-now.com/techhelp?id=kb_article&sysparm_article=KB0012768&sys_kb_id=19ceb819477c4e14e18ed9e0336d43a2).
+    - If you would like to meet in person, my office is Room 317, Lucille Little Library. Please contact me at least one day in advance if you prefer an in-person meeting. In-person meetings may not be available without advance notice.
+- Timeframe for responses: I typically respond to student messages and emails within 24 hours on weekdays. Messages received on weekends or university holidays will be answered by the next business day.
 
 ### Meeting Schedule
 
@@ -44,31 +32,11 @@ This course takes place asynchronously on Canvas
 
 This course uses a free custom online textbook based on Creative Commons-licensed works such as [*Data Feminism*](https://data-feminism.mitpress.mit.edu/), OpenStax's [*Introductory Statistics*](https://openstax.org/details/books/introductory-statistics), and the "ModernDive" [*Statistical Inference Via Data Science*](https://moderndive.com/v2) textbook. 
 
-## "Life is Difficult" Statement [inspired by [Dr. Andrew Heiss]
-
-Recent years have been characterized by a global pandemic, increased (and overdue) attention to inequalities and injustices, and stressful political tensions; we might hope that the worst of all of these has passed, but the truth is that none of them have disappeared. This can be a difficult time to be in grad school—and it may be more difficult for some individuals and groups than others.
-
-**Despite these difficulties, I am fully committed to making sure that you learn everything you were hoping to learn from this class!** My late policy and willingness to make accommodations are generous even during normal times, and if your life is being turned upside down, I'm willing to be as flexible as you need me to be—so long as you are active in communicating with me.
-
-If you feel like you're behind, not understanding everything, or just plain stressed, **do not suffer in silence**! I'm usually quick to respond to email and more than happy to meet with you.
-
-
-## Basic Needs Statement [inspired by Dr. [Sara Goldrick-Rab](https://medium.com/@saragoldrickrab/basic-needs-security-and-the-syllabus-d24cc7afe8c9)]
-
-Any student who has difficulty affording or accessing food to eat every day or who lacks a safe and stable place to live and believes this may affect their performance in the course is urged to [contact the Center for Support and Intervention](https://www.uky.edu/concern/). Furthermore, if you are comfortable doing so, you can also notify me.
-
-The following resources are also available at the University of Kentucky:
-
-* [Mental Health Resources](https://studentsuccess.uky.edu/get-help)
-* [Academic Support](https://studentsuccess.uky.edu/academicresources)
-* [Disability Resource Center](https://studentsuccess.uky.edu/disability-resource-center)
-* [Academic Ombud](https://ombud.uky.edu/students)
-
 ## Course Information
 
 ### Course Description
 
-This course will provide a foundation in the area of data science based on data curation and statistical analysis. The primary goal of this course is for students to learn data analysis concepts and techniques that facilitate making decisions from a rich data set. Students will investigate data concepts, metadata creation and interpretation, the general linear model, cluster analysis, and basics of information visualization. At the beginning, this course will introduce fundamentals about data and data standards and methods for organizing, curating, and preserving data for reuse. Then, we will focus on the inferential statistics: drawing conclusions and making decisions from data. This course will help students understand how to use data analysis tools, and especially, provide an opportunity to utilize an open source data analysis tool, R, for data manipulation, analysis, and visualization. Finally, in this course we will discuss diverse issues around data including technologies, behaviors, organizations, policies, and society. 
+This course will provide a foundation in the area of data science based on data curation and statistical analysis. The primary goal of this course is for students to learn data analysis concepts and techniques that facilitate making decisions from a rich data set. Students will investigate data concepts, metadata creation and interpretation, the general linear model, and basics of information visualization. At the beginning, this course will introduce fundamentals about data and data standards and methods for organizing, curating, and preserving data for reuse. Then, we will focus on the inferential statistics: drawing conclusions and making decisions from data. This course will help students understand how to use data analysis tools, and especially, provide an opportunity to utilize an open source data analysis tool, R, for data manipulation, analysis, and visualization. Finally, in this course we will discuss diverse issues around data including technologies, behaviors, organizations, policies, and society. 
 
 ### Course Objectives—"I Can Statements"
 
@@ -80,12 +48,12 @@ The following "I can" statements will guide all of the learning and assessment a
 
 ### Course Assessment
 
-Your grade for this course will be based on 100 points: 
+Letter Grade Scale: 
 
-* 90 points – 100.0 points = A
-* 80 points – 89.9 points = B
-* 70 points – 79.9 points = C
-* 0 points – 69.9 points = E
+* 90.0 points – 100.0 points = A
+* 80.0 points – 89.9 points = B
+* 70.0 points – 79.9 points = C
+* 0.0 points – 69.9 points = E
 
 These 100 points come from the following assessment activities, which should all be completed honestly and individually on Canvas:
 
@@ -102,24 +70,32 @@ Detailed instructions for these projects can be found on Canvas.
 
 #### Participation
 
-Throughout the semester, you will earn 45 points from a series of participation activities. During each of the fifteen modules of the semester, you will complete three reading or participation activities (each worth one point) that will help you extend or apply your understanding of course content; while these activities vary from module to module, a plurality of modules involve annotating a reading from the textbook, completing a programming walkthrough with provided data, and then adapting (some of) the code from the walkthrough to work with your own data.
+Throughout the semester, you will earn 45 points from a series of participation activities. During each of the fifteen modules of the semester, you will complete three reading or participation activities (each worth one point) that will help you extend or apply your understanding of course content; while these activities vary from module to module, a plurality of modules involve reading and discussing a selection from the textbook, completing a programming walkthrough with provided data, and then adapting (some of) the code from the walkthrough to work with your own data.
+
+### Mechanics of Submissions
+
+All assignments, discussions, and quizzes must be submitted through Canvas by the deadlines listed on Canvas. Students are responsible for ensuring that submissions are successfully uploaded and viewable. Late or incomplete submissions will be handled in accordance with the course's late work policy. Additional submission details, including file formats and technical requirements, will be provided on the individual assignment pages.
 
 ### Late Work Policy
 
-Officially, each assignment is due at 11:59pm on the Sunday night indicated in Canvas. Practically speaking, however, I will grade without penalty (for graded assessments) and provide feedback on (for all assessments) anything that is turned in by the time I begin reviewing that assessment. However, I will not grade or provide feedback on any work that is completed after this time unless you have made other arrangements with me. Naturally, because my schedule varies from week to week and because I try to provide feedback as quickly as possible, your best bet is to turn in your work by the official deadline or—if life has thrown you a curveball—to get in touch with me ahead of time to make other arrangements.
+Assignments should be submitted online via Canvas by the posted deadlines. Late submissions will be penalized as follows:
+- Work submitted within three (3) days after the deadline will receive a 20% deduction from the earned grade.
+- Work submitted more than three (3) days late will receive a zero (0) grade.
 
-### Prep Week
+Students who wish to make up work more than three (3) days late must contact me via Microsoft Teams or email and provide a justification with supporting documentation. If approved, make-up work may receive no more than 70% of the available points. Requests must be made by the Final Project deadline, and all approved make-up work must be submitted by the Final Submission Deadline.
 
-[UK policies](https://ombud.uky.edu/students/academic-policies/prep-days-reading-days) limit what I can assign during Week 16 of the course. However, I am "permitted to grade student participation," "collect regularly assigned homework," and "collect projects" so long as those assignments are scheduled ahead of time and, in the case of projects, there is nothing due during Finals Week. Please note that your final project meets these requirements and is due during Week 16.
+Excused absences recognized under [University policy](https://ombud.uky.edu/students/academic-policies/absences). will be handled in accordance with University policy.
 
 
 ## Course Policies
 
 All of the policies listed on [this page](https://www.uky.edu/universitysenate/acadpolicy) are in effect for this course. 
 
-## Plagiarism, Cheating, and Generative AI
+### Academic Offenses
 
-### Plagiarism [[source]](https://ombud.uky.edu/students/what-plagiarism)
+Please refer to the University’s official policy on academic offenses: [academic offenses](https://provost.uky.edu/proposals/guidance-course-proposals/academic-offenses).
+
+#### Plagiarism [[source]](https://ombud.uky.edu/students/what-plagiarism)
 
 "All academic work, written or otherwise, submitted by students to their instructors or other academic supervisors, is expected to be the result of their own thought, research or self-expression. In cases where students feel unsure about a question of plagiarism involving their work, they are obliged to consult their instructors on the matter before submission. When students submit work purporting to be their own, but which in any way borrows ideas, organization, wording or content from another source without appropriate acknowledgment of the fact, the students are guilty of plagiarism.
 
@@ -127,119 +103,216 @@ All of the policies listed on [this page](https://www.uky.edu/universitysenate/a
 
 "Students may discuss assignments among themselves or with an instructor or tutor, except where prohibited by the Instructor of Record (e.g. individual take-home exams). However, the actual work must be done by the student, and the student alone, unless collaboration is allowed by the Instructor of Record (e.g. group projects). When a student's assignment involves research in outside sources or information, the student must carefully acknowledge exactly what, where and how they have employed them. If the words of someone else are used, the student must put quotation marks around the passage in question and add an appropriate indication of its origin. Making simple changes while leaving the organization, content and phraseology intact is plagiaristic. However, nothing in this AR shall apply to those ideas which are so generally and freely circulated as to be a part of the public domain."
 
-### Cheating [[source]](https://ombud.uky.edu/students/what-cheating)
+#### Cheating [[source]](https://ombud.uky.edu/students/what-cheating)
 
 "Cheating is defined by its general usage. It includes, but is not limited to, the wrongfully giving, taking or presenting any information or material by a student with the intent of aiding themself or another on any academic work which is considered in any way in the determination of the final grade. 
 
 "The fact that a student could not have benefited from an action is not by itself proof that the action does not constitute cheating."
 
-### Code, Plagiarism, and Generative AI
+### Code, Plagiarism, and AI Policies
 
 It is common practice in data science and programming communities to borrow code from other, more knowledgeable programmers. Indeed, many of the weekly activities in this class will explicitly involve copying or adapting code from our textbook. While I prefer that you draw from the textbook when borrowing code from other sources, you might also find online or other sources helpful for figuring out how to complete a specific task for your class projects. When done properly, this is not plagiarism or cheating—in fact, it is good practice in data science.
 
 **Nonetheless, you are ultimately responsible for completing assessments**, and plagiarism and cheating remain a serious concern for this course. If you consult other sources, please ensure that they support (rather than replace) your personal work, effort, initiative, and understanding. It is your responsibility to ensure that you understand what plagiarism is and how to avoid it; when in doubt, reach out to me with your questions.
 
-Along these lines, I **strongly discourage** you from using any generative AI tool (including ChatGPT, Claude, Llama, Gemini, or Grok) to write code or text for you. AI-generated output can include errors, and as a general rule, **if you know enough to catch those errors, you know enough to generate that output yourself**. Furthermore, there are multiple different "styles" of coding in R, and I'm intentionally trying to teach you one particular style; even if a generative AI tool returns "correct" code for you, it may give you code that isn't compatible with the style that we're focusing on in this class. This isn't a huge deal, but it will get in the way of your learning, and that's the most important point I can make here: **Generating output yourself (and asking humans like me for help when you run into trouble) will help you develop your knowledge more than relying on a tool.**
+**Generative AI** tools may be used as **limited support for learning** in this course. You should **write your own code** and make a reasonable independent effort to resolve problems before using AI. AI may be used to explain error messages, review code that you have written, help with troubleshooting, and provide feedback. It may not be used to generate a complete solution, analysis workflow, or written response, reflection, or interpretation for submission.
 
-If you do use any generative AI in completing your work, you must explicitly acknowledge it in your submission—and you will assume responsibility for any errors the tool makes. Students who use generative AI output in their work without acknowledging it will be penalized.
+If you use generative AI, you **must disclose the tool used and how it supported your work**. You are **responsible for verifying the accuracy** of any AI-generated information, code, or suggestions, and for being able to explain and reproduce everything you submit.
+
+**Do not present AI-generated output as your own work**. Do not use AI to fabricate information, data, sources, or references. Do not enter private, sensitive, restricted, proprietary, or otherwise unauthorized data into external AI tools.
+
+### Documentation for Excused Absences
+
+Documentation for excused absences must meet the requirements of the [University Excused Absence Policy](https://ombud.uky.edu/students/academic-policies/absences). Additional documentation or information may be requested when permitted by University policy.
+
+### Attendance Policy
+
+This is an asynchronous online course, which requires participation via Canvas to facilitate a sense of community. I will also use Canvas to make course announcements, distribute reading materials, create assignments, and post grades. Please check [Canvas](https://www.uky.edu/canvas/). regularly and check the course homepage for announcements and assignment deadlines.
+
+### Religious Observance and Excused Absences
+
+In accordance with University of Kentucky policy, absences due to major religious observances may be considered excused. Students are responsible for requesting an excused absence in advance of the absence, as outlined in the University’s official policy on religious observance.
+
+Please refer to the University of Kentucky Ombud’s guidance on absences for religious observance:
+https://ombud.uky.edu/students/academic-policies/absence-religious-observance
+
+### Classroom Recording and Course Copyright
+
+#### Classroom Recordings
+
+The University of Kentucky [Code of Student Conduct](https://studentsuccess.uky.edu/student-conduct) defines Invasion of Privacy as using electronic or other devices to make a photographic, audio or video record of any person without their prior knowledge or consent when such a recording is likely to cause injury or distress.
+
+Meetings of this course may be recorded. All video and audio recordings of lecturers and class meetings, provided by the instructors, are for educational use by students in this class only. They are available only through the Canvas shell for this course and are not to be copied, shared or redistributed.
+
+As addressed in the Code of Student Conduct, students are expected to follow appropriate university policies and maintain the security of linkblue accounts used to access recorded class materials. Recordings may not be reproduced, shared with those not enrolled in the class or uploaded to other online environments.
+
+If the instructor or a UK office plans any other uses for the recordings, beyond this class, students identifiable in the recordings will be notified to request consent prior to such use. In anticipation of such cases, students may be asked to complete an “authorization of use” form by a faculty member.
+
+Video and audio recordings by students are not permitted during the class unless the student has received prior permission from the instructor. Any sharing, distribution and or uploading of these recordings outside of the parameters of the class is prohibited. Students with specific recording accommodations approved by the Disability Resource Center should present their official documentation to the instructor.
+
+#### Course Copyright
+
+All original instructor-provided content for this course, which may include handouts, assignments and lectures, is the intellectual property of the instructor(s). Students enrolled in the course this academic term may use the original instructor-provided content for their learning and completion of course requirements this term, but such content must not be reproduced or sold. Students enrolled in the course this academic term are hereby granted permission to use original instructor-provided content for reasonable educational and professional purposes extending beyond this course and term, such as studying for a comprehensive or qualifying examination in a degree program, preparing for a professional or certification examination or to assist in fulfilling responsibilities at a job or internship; other uses of original instructor-provided content require written permission from the instructor(s) in advance.
 
 ## Course Schedule
 
-### Module 1: Course Introduction (25 Aug - 31 Aug)
+### Module 1: Course Introduction (Week 1)
 
-* read and annotate the course syllabus
+* read and discuss the course syllabus
 * complete "Install R and RStudio" walkthrough
 * introduce yourself to the class
 
-### Module 2: Data Science (1 Sep - 7 Sep)
+### Module 2: Data Science (Week 2)
 
-* read and annotate "The New(?) and Shiny(?) Science of Data"
+* read and discuss "The New(?) and Shiny(?) Science of Data"
 * complete "Getting Started with Data in R" walkthrough
 * complete "Set up GitHub" walkthrough
 
 
-### Module 3: Reproducibility and Paradigms (8 Sep to 14 Sep)
+### Module 3: Reproducibility and Paradigms (Week 3)
 
-* read and annotate "Research Paradigms and Reproducibility"
+* read and discuss "Research Paradigms and Reproducibility"
 * complete "Using Projects and Scripts in R" walkthrough
 * complete "Writing in R Markdown" walkthrough
 
 
-### Module 4: Data Sharing (15 Sep - 21 Sep)
+### Module 4: Data Sharing (Week 4)
 
-* read and annotate "The Value of Open Data"
+* read and discuss "The Value of Open Data"
 * complete "Find a Dataset Relevant to You" walkthrough
-* read and annotate "Show Your Work"
+* read and discuss "Show Your Work"
 * **submit Project 1: Finding and Evaluating Data**
 
-### Module 5: Theory and Ethics (22 Sep - 28 Sep)
+### Module 5: Theory and Ethics (Week 5)
 
-* read and annotate "Numbers Don't Speak for Themselves"
-* read and annotate "Are Ethics Enough in Data Science"
+* read and discuss "Numbers Don't Speak for Themselves"
+* read and discuss "Are Ethics Enough in Data Science"
 * reflect on theoretical and philosophical constraints in context
 
-### Module 6: Data Cleaning (29 Sep - 5 Oct)
+### Module 6: Data Cleaning (Week 6)
 
-* read and annotate "Unicorns, Janitors, and Rock Stars"
+* read and discuss "Unicorns, Janitors, and Rock Stars"
 * complete "Wrangling and Tidying Data" walkthrough
 * practice wrangling and tidying your own data
 
-### Module 7: Data Visualization (6 Oct - 12 Oct)
+### Module 7: Data Visualization (Week 7)
 
-* read and annotate "Subjectivity in Data Visualization
+* read and discuss "Subjectivity in Data Visualization"
 * complete "Data Visualization" walkthrough
 * practice visualizing your own data
 
-### Module 8: Descriptive Statistics (13 Oct - 19 Oct)
+### Module 8: Descriptive Statistics (Week 8)
 
-* read and annotate "Statistics and Scientific Racism"
+* read and discuss "Statistics and Scientific Racism"
 * complete "Descriptive Statistics" walkthrough
 * calculate descriptive statistics for your own data
 * **submit Project 2: Exploring and Describing Data**
 
-### Module 9: Basic Regression (20 Oct - 26 Oct)
+### Module 9: Linear Regression (Week 9)
 
-* read and annotate "Basic Regression"
+* read and discuss "Linear Regression"
 * complete "Basic Regression" walkthrough
 * perform a basic regression with your own data
 
-### Module 10: Multiple Regression (27 Oct - 2 Nov)
+### Module 10: Multiple Regression (Week 10)
 
-* read and annotate "Consequences of Failed Predictions"
+* read and discuss "Consequences of Failed Predictions"
 * complete "Multiple Regression" walkthrough
 * perform a multiple regression with your own data
 
-### Module 11: Statistical Sampling (3 Nov - 9 Nov)
+### Module 11: Statistical Sampling (Week 11)
 
-* read and annotate "Samples and Populations"
+* read and discuss "Samples and Populations"
 * complete "Sampling" walkthrough
 * explore sampling with your own data
 
-### Module 12: Confidence Intervals (10 Nov - 16 Nov)
+### Module 12: Confidence Intervals (Week 12)
 
-* read and annotate "Confident About What?"
+* read and discuss "Confident About What?"
 * complete "Confidence Intervals" walkthrough
 * explore confidence intervals with your own data
 
-### Module 13: Hypothesis Testing (17 Nov - 23 Nov)
+### Module 13: Hypothesis Testing (Week 13)
 
-* read and annotate "The Danger of False Positives"
+* read and discuss "The Dangers of False Positives"
 * complete "Hypothesis Testing" walkthrough
 * explore hypothesis testing with your own data
 
-### Module 14: Inferential Regression (26 Nov - 30 Nov)
+### Module 14: Inferential Regression (Week 14)
 
-* read and annotate "Small Stories vs. Big Data"
+* read and discuss "Small Stories vs. Big Data"
 * complete "Inferential Regression" walkthrough
 * perform an inferential regression with your own data
 * **submit Project 3: Building and Evaluating Models**
 
-### Module 15: Course Reflection (1 Dec - 7 Dec)
+### Module 15: Course Reflection (Week 15)
 
 * reflect on your understanding of data science
 * reflect on your application of data science
 * reflect on your connection with data science
 
-### Module 16: Final Project (8 Dec - 10 Dec)
+### Module 16: Final Project (Week 16)
 
 * **submit Final Project: Reporting Data Analysis**
+
+## Other Information
+
+### University Policies and Student Support Resources
+
+Any student who has difficulty affording or accessing food to eat every day or who lacks a safe and stable place to live and believes this may affect their performance in the course is urged to [contact the Center for Support and Intervention](https://www.uky.edu/concern/). Furthermore, if you are comfortable doing so, you can also notify me.
+
+- [Academic Policy Statements](https://provost.uky.edu/proposals/guidance-course-proposals/standard-academic-policy-statements)
+- [Mental Health Resources](https://studentsuccess.uky.edu/get-help)
+- [Academic Support](https://studentsuccess.uky.edu/academicresources)
+- [Disability Resource Center](https://studentsuccess.uky.edu/disability-resource-center)
+- [Academic Ombud](https://ombud.uky.edu/students)
+- [Classroom Emergency Preparedness and Response Information](https://provost.uky.edu/instructor-resources)
+
+### Classroom Emergency Preparedness and Response Information
+
+Your safety is our top priority. The UK Police Department works to enhance campus security, but we all share responsibility for keeping our community safe. In an emergency during class, follow your instructor’s directions based on university, building and department plans.
+
+If there is an emergency, DIAL 911. To report suspicious activity or non-emergency situations, call the UK Police Department at 859-257-8573 or #UKPD from any mobile phone.
+
+**UK Alert**
+
+The university provides emergency notifications through UK Alert, which sends messages via email, text message, phone calls, building alarm systems, digital signage, social media, outdoor sirens and via push notifications through the SafeZone App. If you receive a UK Alert message during class, notify your instructor and classmates immediately. For more information, visit the [UK Alert page](https://police.uky.edu/get-notified/uk-alert).
+
+**Emergency Actions:**
+
+**Evacuation**
+
+Leave the building immediately using the nearest safe exit. Do not use elevators. Follow posted evacuation routes and go to the designated assembly area if available. Stay clear of the building and wait for further instructions from emergency personnel.
+
+**Severe Weather Sheltering**
+
+Report to the nearest marked shelter location. If a marked shelter location is unavailable, move to an interior room or hallway on the lowest floor. Avoid doors and windows. Take cover under a sturdy table and protect your head and neck.
+
+**Shelter-in-Place**
+
+Stay where you are unless your building is affected. If it is, evacuate only if the fire alarm sounds or law enforcement instructs you. Choose an interior room with few or no windows and no exterior doors if possible. Close all windows and doors.
+
+**Active Aggressor**
+
+- Run – Escape if you can.
+- Hide – If escape isn’t possible, hide in a secure place. Silence your phone and dim the screen.
+- Fight – As a last resort, defend yourself by any means necessary.
+
+### Distance Learning Courses
+
+**Contact information for Information Technology Services customer service center:**
+
+- **Web:** [Tech Help Center Customer Services](http://techhelpcenter.uky.edu/customerservices)
+- **For urgent matters:** 859-218-HELP (4357)
+- **For non-urgent matters:** [Customer Services Assistance Request form](https://uky.service-now.com/techhelp?id=kb_article&sysparm_article=KB0013267) or chat at [Tech Help Center](http://techhelpcenter.uky.edu)
+
+**Contact information for Distance Learning services:**
+
+- **Email:** [distancelearning@uky.edu](mailto:distancelearning@uky.edu)
+- **Phone:** 859-257-3377
+
+**Information on Distance Learning Library Services:**
+
+- Web: [Distance Learning Services](https://libraries.uky.edu/DLLS)
+- Phone: 859 218-1240
+- [Interlibrary Loan Service](https://libraries.uky.edu/ILL)

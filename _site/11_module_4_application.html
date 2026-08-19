@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-e1f80fdf4f2d1822162f836d66ecff9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -743,7 +743,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/hengzheng/codex_projects/data-science-intro"</code></pre>
+<pre><code>[1] "/Users/hengzheng/codex_projects/teaching/data-science-intro"</code></pre>
 </div>
 </div>
 <p>This is another case where the output that you see in the book is different than the output you’ll see where you run this code—and that’s the point of <code>here()</code>! What this function does is to figure out the <em>filepath</em> for the folder that contains the R project you’re working in. So, the output that I get when I run <code>here()</code> is the location of the R project associated with this textbook; it’s also formatted the way that macOS (the operating system I’m currently using) formats locations. You ought to get output that tells you the location of the R project that you set up for this class and that formats it in the way that your operating system formats locations. Think of <code>here()</code> as a shortcut that takes you to the main folder that you’re working in; that way, you only have to provide the extra detail beyond that. (At the risk of repeating myself, though, this emphasizes the importance of <strong>finding and working in the expected main folder</strong>. If you’re not doing that, <code>here()</code> won’t be as helpful.)</p>
@@ -751,7 +751,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"activity_data"</span>,<span class="st">"Twitter_hashtags.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/hengzheng/codex_projects/data-science-intro/activity_data/Twitter_hashtags.csv"</code></pre>
+<pre><code>[1] "/Users/hengzheng/codex_projects/teaching/data-science-intro/activity_data/Twitter_hashtags.csv"</code></pre>
 </div>
 </div>
 <p>When you run this code, it’s unlikely that your dataset is named <code>Twitter_hashtags.csv</code>, so you should replace that with the name of your file. Likewise, as we saw above, your output should also look different because the location of your project folder is different than the location of mine! No matter how different your output looks, though, you ought to notice how much shorter your <code>here()</code> argument is than the exact location that you might otherwise have to type out. That’s why <code>here()</code> is useful!</p>
