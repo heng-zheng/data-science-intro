@@ -32,6 +32,8 @@ This course takes place asynchronously on Canvas
 
 This course uses a free custom online textbook based on Creative Commons-licensed works such as [*Data Feminism*](https://data-feminism.mitpress.mit.edu/), OpenStax's [*Introductory Statistics*](https://openstax.org/details/books/introductory-statistics), and the "ModernDive" [*Statistical Inference Via Data Science*](https://moderndive.com/v2) textbook. 
 
+This course textbook is adapted from materials developed by Dr. Spencer Greenhalgh. Some sections retain first-person examples and experiences from the original text; unless otherwise indicated, those references describe the original author. Additional source materials are identified within individual chapters.
+
 ## Course Information
 
 ### Course Description
