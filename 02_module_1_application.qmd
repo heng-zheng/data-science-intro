@@ -36,7 +36,7 @@ You can (and should now) install R from [CRAN](https://cloud.r-project.org/), th
 
 Programming in R can be done in a number of ways, but in this class, we'll be using an IDE (*[integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment)*) called RStudio (developed by an organization called Posit).
 
-To download RStudio Desktop, navigate to this [this link](https://posit.co/download/rstudio-desktop/). It will provide you with a link for downloading R; since you've already done that, you can ignore it. What you shouldn't ignore, though, is the link it will provide to download RStudio for your computer's operation system.
+To download RStudio Desktop, navigate to this [this link](https://posit.co/download/rstudio-desktop/). It will provide you with a link for downloading R; since you've already done that, you can ignore it. What you shouldn't ignore, though, is the link it will provide to download RStudio for your computer's operating system.
 
 It's important to understand that RStudio is one of many interfaces available for working with the R programming language. Another interface (simply called R) will also be installed on your computer as a result of installing the R language, and it will be possible to open R code in either the R interface or the RStudio interface. Make sure that you always open code in RStudio—not only do I find it cleaner and easier to work with code there, but RStudio also has some extra features that we'll be using throughout the semester.
 
