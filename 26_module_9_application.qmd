@@ -67,7 +67,7 @@ We begin with regression with a single explanatory variable\index{regression!bas
 
 load all the packages needed for this chapter (this assumes you've already installed them). In this chapter, we introduce some new packages:
 
-1. The `tidyverse` "umbrella" package. Recall from our discussion in Section @sec-tidyverse-package that loading the `tidyverse` package by running `library(tidyverse)` loads the following commonly used data science packages all at once:
+1. The `tidyverse` "umbrella" package. Recall from our discussion in the [`tidyverse` package section](17_module_6_application.qmd#sec-tidyverse-package) that loading the `tidyverse` package by running `library(tidyverse)` loads the following commonly used data science packages all at once:
     + `ggplot2` for data visualization
     + `dplyr` for data wrangling
     + `tidyr` for converting data to "tidy" format
@@ -75,7 +75,7 @@ load all the packages needed for this chapter (this assumes you've already insta
     + As well as the more advanced `purrr`, `tibble`, `stringr`, and `forcats` packages
 2. The `moderndive` \index{R packages!moderndive} package of datasets and functions for tidyverse-friendly introductory linear regression as well as a data frame summary function.
 
-If needed, read Section @sec-packages for information on how to install and load R packages.
+If needed, read [What are R packages?](05_module_2_application.qmd#sec-packages) for information on how to install and load R packages.
 
 ```{r message=FALSE}
 library(tidyverse)
@@ -134,13 +134,13 @@ A crucial step before doing any kind of analysis or modeling is performing an *e
 
 We perform the first common step in an exploratory data analysis: looking at the raw data values. Because this step seems so trivial, unfortunately many data analysts ignore it. However, getting an early sense of what your raw data looks like can often prevent many larger issues down the road. 
 
-You can do this by using RStudio's spreadsheet viewer or by using the `glimpse()` function as introduced in Subsection @sec-exploredataframes on exploring data frames:
+You can do this by using RStudio's spreadsheet viewer or by using the `glimpse()` function as introduced in [Exploring data frames](05_module_2_application.qmd#sec-exploredataframes) on exploring data frames:
 
 ```{r}
 glimpse(UN_data_m9)
 ```
 
-Observe that ``Rows: `r n_demo_m9` `` indicates that there are `r n_demo_m9` rows/observations in `UN_data_m9` after filtering out the missing values, where each row corresponds to one observed country/member state. It is important to note that the *observational unit* \index{observational unit} is an individual country. Recall from Subsection @sec-exploredataframes that the observational unit is the "type of thing" that is being measured by our variables.
+Observe that ``Rows: `r n_demo_m9` `` indicates that there are `r n_demo_m9` rows/observations in `UN_data_m9` after filtering out the missing values, where each row corresponds to one observed country/member state. It is important to note that the *observational unit* \index{observational unit} is an individual country. Recall from [Exploring data frames](05_module_2_application.qmd#sec-exploredataframes) that the observational unit is the "type of thing" that is being measured by our variables.
 
 A full description of all the variables included in `un_member_states_2024` can be found by reading the associated help file (run [`?un_member_states_2024`](https://moderndive.github.io/moderndive/reference/un_member_states_2024.html) in the console). Let's describe only the `r UN_data_m9 |> ncol()` variables we selected in `UN_data_m9`:
 
@@ -176,7 +176,7 @@ UN_data_m9 |>
   )
 ```
 
-We have looked at the raw values in our `UN_data_m9` data frame and got a preliminary sense of the data. We can now compute summary statistics. We start by computing the mean and median of our numerical outcome variable `fert_rate` and our numerical explanatory variable `life_exp`. We do this by using the `summarize()` function from `dplyr` along with the `mean()` and `median()` summary functions we saw in Section @sec-summarize.
+We have looked at the raw values in our `UN_data_m9` data frame and got a preliminary sense of the data. We can now compute summary statistics. We start by computing the mean and median of our numerical outcome variable `fert_rate` and our numerical explanatory variable `life_exp`. We do this by using the `summarize()` function from `dplyr` along with the `mean()` and `median()` summary functions we saw in the [`summarize` variables section](23_module_8_application.qmd#sec-summarize).
 
 ```{r eval=FALSE}
 UN_data_m9 |>
@@ -551,7 +551,7 @@ It is an unfortunate truth that life expectancy is not the same across all count
 1. Differences between continents: Are there significant differences in average life expectancy between the six populated continents of the world: Africa, North America, South America, Asia, Europe, and Oceania?
 1. Differences within continents: How does life expectancy vary within the world's five continents? For example, is the spread of life expectancy among the countries of Africa larger than the spread of life expectancy among the countries of Asia?
 
-To answer such questions, we use an updated version of the `gapminder` data frame we visualized in Figure @fig-gapminder in Subsection @sec-gapminder on the grammar of graphics. This updated `un_member_states_2024` data we saw earlier in this chapter. It is included in the `moderndive` \index{R packages!moderndive} package and has international development statistics such as life expectancy, GDP per capita, and population for `r n_countries` countries for years near 2024. We use this data for basic regression again, but now using an explanatory variable $x$ that is categorical, as opposed to the numerical explanatory variable model we used in the previous Section @sec-model1:
+To answer such questions, we use an updated version of the `gapminder` data frame we visualized in the [Gapminder figure](20_module_7_application.qmd#fig-gapminder) in the [Gapminder data section](20_module_7_application.qmd#sec-gapminder) on the grammar of graphics. This updated `un_member_states_2024` data we saw earlier in this chapter. It is included in the `moderndive` \index{R packages!moderndive} package and has international development statistics such as life expectancy, GDP per capita, and population for `r n_countries` countries for years near 2024. We use this data for basic regression again, but now using an explanatory variable $x$ that is categorical, as opposed to the numerical explanatory variable model we used in the previous Section @sec-model1:
 
 1. A numerical outcome variable $y$ (a country's life expectancy) and
 1. A single categorical explanatory variable $x$ (the continent that the country is a part of).
@@ -582,7 +582,7 @@ mean_africa <- gapminder2022 |>
 gapminder2022_rows <- gapminder2022 |> nrow()
 ```
 
-We perform the first common step in an exploratory data analysis: looking at the raw data values. You can do this by using RStudio's spreadsheet viewer or by using the `glimpse()` command as introduced in Subsection @sec-exploredataframes on exploring data frames:
+We perform the first common step in an exploratory data analysis: looking at the raw data values. You can do this by using RStudio's spreadsheet viewer or by using the `glimpse()` command as introduced in [Exploring data frames](05_module_2_application.qmd#sec-exploredataframes) on exploring data frames:
 
 ```{r}
 glimpse(gapminder2022)
@@ -670,7 +670,7 @@ ggplot(gapminder2022, aes(x = life_exp)) +
 
 We see that this data is *left-skewed*, also known as *negatively* \index{skew} skewed: there are a few countries with low life expectancy that are bringing down the mean life expectancy. However, the median is less sensitive to the effects of such outliers; hence, the median is greater than the mean in this case.
 
-Remember, however, that we want to compare life expectancies both between continents and within continents. In other words, our visualizations need to incorporate some notion of the variable `continent`. We can do this easily with a faceted histogram. Recall from Section @sec-facets that facets allow us to split a visualization by the different values of another variable. We display the resulting visualization in Figure @fig-catxplot0b by adding a \index{R packages!ggplot2!facet\_wrap()} `facet_wrap(~ continent, nrow = 2)` layer.
+Remember, however, that we want to compare life expectancies both between continents and within continents. In other words, our visualizations need to incorporate some notion of the variable `continent`. We can do this easily with a faceted histogram. Recall from the [Facets section](20_module_7_application.qmd#sec-facets) that facets allow us to split a visualization by the different values of another variable. We display the resulting visualization in Figure @fig-catxplot0b by adding a \index{R packages!ggplot2!facet\_wrap()} `facet_wrap(~ continent, nrow = 2)` layer.
 
 ```{r eval=FALSE}
 ggplot(gapminder2022, aes(x = life_exp)) +
@@ -744,46 +744,32 @@ Observe the order of the second column `median` life expectancy: Africa is lowes
 # Coding model earlier to calculate the intercepts etc below
 life_exp_model <- lm(life_exp ~ continent, data = gapminder2022)
 
+# Use model coefficient names rather than formatted moderndive term labels.
+# Preserve the original rounding: three decimal places, then two.
+life_exp_coefficients <- round(coef(life_exp_model), 3)
+
 # Africa / Intercept
-intercept <- get_regression_table(life_exp_model) |>
-  filter(term == "intercept") |>
-  pull(estimate) |>
-  round(2)
+intercept <- round(life_exp_coefficients[["(Intercept)"]], 2)
 
 mean_africa <- intercept
 
 # Americas
-offset_north_america <- get_regression_table(life_exp_model) |>
-  filter(term == "continent: North America") |>
-  pull(estimate) |>
-  round(2)
+offset_north_america <- round(life_exp_coefficients[["continentNorth America"]], 2)
 mean_north_america <- intercept + offset_north_america
 
-offset_south_america <- get_regression_table(life_exp_model) |>
-  filter(term == "continent: South America") |>
-  pull(estimate) |>
-  round(2)
+offset_south_america <- round(life_exp_coefficients[["continentSouth America"]], 2)
 mean_south_america <- intercept + offset_south_america
 
 # Asia
-offset_asia <- get_regression_table(life_exp_model) |>
-  filter(term == "continent: Asia") |>
-  pull(estimate) |>
-  round(2)
+offset_asia <- round(life_exp_coefficients[["continentAsia"]], 2)
 mean_asia <- intercept + offset_asia
 
 # Europe
-offset_europe <- get_regression_table(life_exp_model) |>
-  filter(term == "continent: Europe") |>
-  pull(estimate) |>
-  round(2)
+offset_europe <- round(life_exp_coefficients[["continentEurope"]], 2)
 mean_europe <- intercept + offset_europe
 
 # Oceania
-offset_oceania <- get_regression_table(life_exp_model) |>
-  filter(term == "continent: Oceania") |>
-  pull(estimate) |>
-  round(2)
+offset_oceania <- round(life_exp_coefficients[["continentOceania"]], 2)
 mean_oceania <- intercept + offset_oceania
 ```
 
